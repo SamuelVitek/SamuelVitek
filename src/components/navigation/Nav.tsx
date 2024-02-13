@@ -1,21 +1,11 @@
-import {Breadcrumbs, Link, Typography} from "@mui/material"
+import React from 'react';
 
 const Nav = () => {
     return (
-        <Breadcrumbs aria-label="breadcrumb">
-            <Link underline="hover" color="inherit" href="/">
-                MUI
-            </Link>
-            <Link
-                underline="hover"
-                color="inherit"
-                href="#"
-            >
-                Core
-            </Link>
-            <Typography color="text.primary">Breadcrumbs</Typography>
-        </Breadcrumbs>
-    )
-}
+        <div>
+            
+        </div>
+    );
+};
 
 export default Nav;
