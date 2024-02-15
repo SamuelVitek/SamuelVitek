@@ -2,16 +2,18 @@ import React from 'react';
 import './App.css';
 import Introduction from "./components/Introduction";
 import {ChakraProvider, theme} from "@chakra-ui/react";
+import Experience from "./components/Experience";
 
 function App() {
     return (
-        <div className="App">
+        <body className="App">
             <ChakraProvider theme={theme}>
-                <body className="App-body">
+                <div className="App-body">
                     <Introduction/>
-                </body>
+                    <Experience />
+                </div>
             </ChakraProvider>
-        </div>
+        </body>
     );
 }
 
