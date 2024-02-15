@@ -6,7 +6,7 @@ const Experience = () => {
     return (
         <Flex flexDirection='column' w='75%'>
             <Text w='full' textAlign='left' my='50px'>
-                My Timelines
+                My Experience
             </Text>
             <Timeline />
         </Flex>

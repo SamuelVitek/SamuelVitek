@@ -1,46 +1,50 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Flex, Heading, Image, Tag, Text } from "@chakra-ui/react";
-import { faBriefcase, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faBriefcase, faLocationDot, faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import { Data } from "../../data/Types";
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
 
 interface PropsType {
-    data: Data;
+    props: Data;
+    isWork: boolean;
 }
 
-const TimelineElement = ({data}: PropsType) => {
+const TimelineElement = ({props, isWork}: PropsType) => {
+    const bgColor = isWork ? '#02294f' : '#c53030';
+    const borderColor = isWork ? '#0e4c8a' : '#f56565';
+
     return (
         <VerticalTimelineElement
             className="vertical-timeline-element--work"
             contentStyle={{
-                background: 'rgb(2, 41, 79)',
+                background: bgColor,
                 color: '#fff',
                 boxShadow: '0 0 1px #ccc',
-                borderTop: '2px solid rgb(14, 76, 138)',
+                borderTop: '2px solid ' + borderColor,
                 textAlign: 'left',
                 paddingBottom: '0.75em'
             }}
-            contentArrowStyle={{borderRight: '7px solid  rgb(2, 41, 79)'}}
-            date={data.date}
-            iconStyle={{background: 'rgb(2, 41, 79)', color: '#fff'}}
-            icon={<FontAwesomeIcon icon={faBriefcase}/>}
+            contentArrowStyle={{borderRight: '10px solid ' + bgColor}}
+            date={props.date}
+            iconStyle={{background: bgColor, color: '#fff'}}
+            icon={<FontAwesomeIcon icon={isWork ? faBriefcase : faGraduationCap}/>}
         >
             <Flex>
                 <Flex w='80%' flexDirection='column'>
-                    <Heading style={{color: 'white'}}>{data.title}</Heading>
+                    <Heading style={{color: 'white'}}>{props.title}</Heading>
                     <Text style={{margin: '0'}}>
-                        <FontAwesomeIcon icon={faBriefcase}/> {data.company}
+                        <FontAwesomeIcon icon={isWork ? faBriefcase : faGraduationCap}/> {props.company}
                     </Text>
                     <Text style={{margin: '0 0 2.25em 0'}}>
-                        <FontAwesomeIcon icon={faLocationDot}/> {data.location}
+                        <FontAwesomeIcon icon={faLocationDot}/> {props.location}
                     </Text>
                 </Flex>
                 <Flex>
-                    <Image src={data.logo} fit='cover' alt='Logo' w='3.125em' h='3.125em' borderRadius='full'/>
+                    <Image src={props.logo} fit='cover' alt='Logo' w='3.125em' h='3.125em' borderRadius='full'/>
                 </Flex>
             </Flex>
-            {data.skills.map((skill, index) => (
+            {props.skills.map((skill, index) => (
                 <Tag me='2' key={index + '_' + skill}>{skill}</Tag>
             ))}
         </VerticalTimelineElement>

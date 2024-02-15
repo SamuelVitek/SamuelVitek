@@ -23,11 +23,16 @@ export enum Tools {
     SCRUM = 'Agile Dev - Scrum',
 }
 
+export enum Field {
+    IT = 'Information Technology',
+    WEB = 'Web Design and Web Development'
+}
+
 export type Data = {
     title: string;
     company: string;
     location: string;
     logo: string;
-    skills: Array<Skills | Tools>
+    skills: Array<Skills | Tools | Field>
     date: string;
 }
