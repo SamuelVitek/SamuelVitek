@@ -14,7 +14,7 @@ const MenuItem = ({ children, isLast, to = "/", ...rest }: MenuItemProps) => {
         <Link
             href={to}
             pb={2}
-            borderBottom={activePath === to ? '2px solid white' : ''}
+            borderBottom={(activePath === to && !isLast) ? '2px solid white' : ''}
             _hover={{
                 textDecoration: 'none',
                 borderBottom: !isLast ? '2px solid white' : ''
