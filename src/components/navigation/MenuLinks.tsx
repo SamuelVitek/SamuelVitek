@@ -23,7 +23,7 @@ const MenuLinks = ({ isOpen }: MenuLinksProps) => {
             >
                 <MenuItem to="/about">About me</MenuItem>
                 <MenuItem to="/work">Work Experience</MenuItem>
-                <MenuItem to="/edu">Education</MenuItem>
+                <MenuItem to="/education">Education</MenuItem>
                 <MenuItem to="/projects">Projects</MenuItem>
                 <MenuItem to="/contact" isLast>
                     <Button

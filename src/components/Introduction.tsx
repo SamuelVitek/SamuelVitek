@@ -5,11 +5,8 @@ import Description from "./Description";
 
 const Introduction = () => {
     return (
-        <Flex w='75%' flexDirection='column' mt='20vh' textAlign='left'>
-            <Flex
-                alignItems='center'
-                justifyContent='space-evenly'
-            >
+        <Flex w='75%' flexDirection='column' textAlign='left'>
+            <Flex alignItems='center'>
                 <Flex flexDirection='column' pe='50px'>
                     <Text fontSize='calc(24px + 2vmin)' fontWeight='600' mb='2'>
                         Hello, Samuel Vítek here 👋👋👋
@@ -33,9 +30,6 @@ const Introduction = () => {
                     fit='cover'
                     boxSize='250px'
                 />
-            </Flex>
-            <Flex mt='5'>
-                <Description />
             </Flex>
         </Flex>
     );

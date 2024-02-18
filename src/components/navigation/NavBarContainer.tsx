@@ -9,12 +9,13 @@ const NavBarContainer = ({ children, ...props }: NavBarContainerProps) => {
     return (
         <Flex
             as="nav"
+            position='absolute'
             align="center"
             justify="space-between"
             wrap="wrap"
             w="100%"
             p={8}
-            backgroundColor={'rgb(2, 41, 79)'}
+            backgroundColor=''
             color={'white'}
             {...props}
         >
