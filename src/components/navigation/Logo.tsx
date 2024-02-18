@@ -20,6 +20,7 @@ export default function Logo(props: any) {
             _hover={{
                 textDecoration: 'none'
             }}
+            textAlign='center'
         >
             <Text fontSize="lg" fontWeight="bold">
                 Samuel Vítek
