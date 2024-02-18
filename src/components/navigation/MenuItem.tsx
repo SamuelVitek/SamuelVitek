@@ -3,18 +3,18 @@ import { Link, Text } from "@chakra-ui/react";
 
 interface MenuItemProps {
     children: ReactNode;
-    isActive?: boolean;
     isLast?: boolean;
     to: string;
 }
 
-const MenuItem = ({ children, isLast, isActive = false, to = "/", ...rest }: MenuItemProps) => {
+const MenuItem = ({ children, isLast, to = "/", ...rest }: MenuItemProps) => {
+    const activePath = window.location.pathname;
+
     return (
         <Link
             href={to}
             pb={2}
-            //TODO isActive set to borderBottom (see hover)
-            borderBottom={to === '/' ? '2px solid white' : ''}
+            borderBottom={activePath === to ? '2px solid white' : ''}
             _hover={{
                 textDecoration: 'none',
                 borderBottom: !isLast ? '2px solid white' : ''

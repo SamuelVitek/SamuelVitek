@@ -1,8 +1,6 @@
 import './App.css';
 import React from 'react';
 import { ChakraProvider, theme } from "@chakra-ui/react";
-import Introduction from "./components/Introduction";
-import Experience from "./components/Experience";
 import Nav from "./components/navigation/Nav";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import About from "./pages/About";
