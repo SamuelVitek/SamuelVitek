@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Flex, Image, Text} from "@chakra-ui/react";
+import {Box, Button, Flex, Image, Text} from "@chakra-ui/react";
 import Description from "./Description";
 
 
@@ -30,6 +30,22 @@ const Introduction = () => {
                     fit='cover'
                     boxSize='250px'
                 />
+            </Flex>
+            <Flex>
+                <Button
+                    size="sm"
+                    borderRadius='0px'
+                    borderBottom='1px solid'
+                    borderColor='cyan.400'
+                    className='btn'
+                    color='cyan.400'
+                    h='2.5em'
+                    bg=''
+                >
+                    <Box as='span' color='cyan.400'>
+                        More about me
+                    </Box>
+                </Button>
             </Flex>
         </Flex>
     );
