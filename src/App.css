@@ -22,59 +22,82 @@
   }
 }
 
-.btn::before, .btn::after{
+.btn::before {
   content: "";
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
   width: 0;
-  height: 1px;
-  position: absolute;
-  transition: all 0.2s linear;
-  background: #fff;
-}
-
-span::before, span::after{
-  content: "";
-  width: 1px;
   height: 0;
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.btn::after {
+  content: "";
   position: absolute;
-  transition: all 0.2s linear;
-  background: #fff;
-}
-.btn:hover::before, .btn:hover::after{
-  width: 100%;
-}
-.btn:hover span::before, .btn:hover span::after{
-  height: 100%;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background: transparent;
+  border: none;
 }
 
-.btn::after{
-  left: 0;
-  bottom: 0;
-}
-.btn span::after{
-  transition-delay: 0.4s;
-  right: 0;
-  bottom: 0
-}
-.btn::before{
-  right: 0;
-  top: 0;
-  transition-delay: 0.2s;
-}
-.btn span::before{
-  transition-delay: 0s;
-  left: 0;
-  top: 0;
+.btn:hover::before {
+  animation: animateBefore 0.6s linear forwards;
 }
 
-.btn:hover::after{
-  transition-delay: 0s;
+.btn:hover::after {
+  animation: animateAfter 0.5s linear forwards;
+  animation-delay: 0.6s;
 }
-.btn:hover span::after{
-  transition-delay: 0s;
+
+@keyframes animateBefore {
+  0% {
+    width: 0;
+    height: 0;
+    border-bottom: none;
+    border-right: none;
+    border-top: none;
+    border-left: none;
+  }
+
+  50% {
+    width: 0;
+    height: 100%;
+    border-top: none;
+    border-right: 1px solid;
+    border-bottom: none;
+    border-left: none;
+  }
+
+  100% {
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid;
+    border-right: 1px solid;
+    border-bottom: none;
+    border-left: none;
+  }
 }
-.btn:hover::before{
-  transition-delay: 0.2s;
-}
-.btn:hover span::before{
-  transition-delay: 0.4s;
+
+@keyframes animateAfter {
+  0% {
+    width: 0;
+    height: 0;
+    border-bottom: none;
+    border-right: none;
+    border-top: none;
+    border-left: none;
+  }
+
+  100% {
+    width: 0;
+    height: 100%;
+    border-bottom: none;
+    border-right: none;
+    border-top: none;
+    border-left: 1px solid;
+  }
 }
