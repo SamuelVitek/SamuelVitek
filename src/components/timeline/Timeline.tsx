@@ -7,13 +7,16 @@ import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
-const Timeline = () => {
+interface TimelineProps {
+    isWork?: boolean;
+}
+
+const Timeline = ({ isWork = false }: TimelineProps) => {
     return (
         <VerticalTimeline>
-            {work.map((d, index) => (
+            {isWork ? work.map((d, index) => (
                 <TimelineElement key={index} props={d} isWork={true} />
-            ))}
-            {edu.map((d, index) => (
+            )) : edu.map((d, index) => (
                 <TimelineElement key={index} props={d} isWork={false} />
             ))}
             <VerticalTimelineElement

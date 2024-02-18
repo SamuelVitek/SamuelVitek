@@ -1,13 +1,13 @@
 import React from 'react';
-import {Box, Button, Flex, Image, Link, Text} from "@chakra-ui/react";
-import Description from "./Description";
+import { Box, Button, Flex, Image, Link, Text } from "@chakra-ui/react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
+import {faArrowRight, faDownload} from "@fortawesome/free-solid-svg-icons";
+import {faGithub, faKaggle, faLinkedin} from "@fortawesome/free-brands-svg-icons";
 
 
 const Introduction = () => {
     return (
-        <Flex w='75%' flexDirection='column' textAlign='left'>
+        <Flex flexDirection='column' textAlign='left'>
             <Flex alignItems='center'>
                 <Flex flexDirection='column' pe='50px'>
                     <Text fontSize='calc(24px + 2vmin)' fontWeight='600' mb='2'>
@@ -27,7 +27,7 @@ const Introduction = () => {
                 </Flex>
                 <Image
                     src='img/mugshot.jpg'
-                    alt='Memento'
+                    alt="Sam's mugshot"
                     borderRadius='50%'
                     fit='cover'
                     boxSize='250px'
@@ -56,6 +56,38 @@ const Introduction = () => {
                     </Box>
                     <FontAwesomeIcon icon={faArrowRight} />
                 </Button>
+            </Flex>
+            <Flex mt='8' ms='3' w='10%' justifyContent='space-between'>
+                <Text
+                    opacity='0.3'
+                    _hover={{
+                        textDecoration: 'none',
+                        opacity: '1',
+                        color: 'cyan.400'
+                    }}
+                >
+                    <FontAwesomeIcon icon={faLinkedin}  />
+                </Text>
+                <Text
+                    opacity='0.3'
+                    _hover={{
+                        textDecoration: 'none',
+                        opacity: '1',
+                        color: 'cyan.400'
+                    }}
+                >
+                    <FontAwesomeIcon icon={faGithub}  />
+                </Text>
+                <Text
+                    opacity='0.3'
+                    _hover={{
+                        textDecoration: 'none',
+                        opacity: '1',
+                        color: 'cyan.400'
+                    }}
+                >
+                    <FontAwesomeIcon icon={faKaggle} />
+                </Text>
             </Flex>
         </Flex>
     );

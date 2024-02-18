@@ -1,8 +1,8 @@
 import './App.css';
 import React from 'react';
-import { ChakraProvider, theme } from "@chakra-ui/react";
+import {ChakraProvider, Flex, theme} from "@chakra-ui/react";
 import Nav from "./components/navigation/Nav";
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import Edu from "./pages/Edu";
@@ -25,7 +25,9 @@ function App() {
             <ChakraProvider theme={theme}>
                     <Nav/>
                     <div className="App-body">
-                        <RouterProvider router={router} />
+                        <Flex w='75%'>
+                            <RouterProvider router={router} />
+                        </Flex>
                     </div>
             </ChakraProvider>
         </div>
