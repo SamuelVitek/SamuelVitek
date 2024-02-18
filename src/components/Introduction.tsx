@@ -1,6 +1,8 @@
 import React from 'react';
-import {Box, Button, Flex, Image, Text} from "@chakra-ui/react";
+import {Box, Button, Flex, Image, Link, Text} from "@chakra-ui/react";
 import Description from "./Description";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
 
 
 const Introduction = () => {
@@ -33,18 +35,26 @@ const Introduction = () => {
             </Flex>
             <Flex>
                 <Button
-                    size="sm"
+                    mt='5'
+                    h='2.5em'
+                    size='sm'
+                    as={Link}
+                    href='/about'
+                    className='btn'
                     borderRadius='0px'
                     borderBottom='1px solid'
                     borderColor='cyan.400'
-                    className='btn'
                     color='cyan.400'
-                    h='2.5em'
                     bg=''
+                    _hover={{
+                        textDecoration: 'none',
+                        bg: ''
+                    }}
                 >
-                    <Box as='span' color='cyan.400'>
+                    <Box as='span' color='cyan.400' me='2'>
                         More about me
                     </Box>
+                    <FontAwesomeIcon icon={faArrowRight} />
                 </Button>
             </Flex>
         </Flex>

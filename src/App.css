@@ -25,8 +25,8 @@
 .btn::before {
   content: "";
   position: absolute;
-  bottom: -1px;
-  right: -1px;
+  bottom: 0;
+  right: 0;
   width: 0;
   height: 0;
   background: transparent;
@@ -73,7 +73,7 @@
   }
 
   100% {
-    width: 100%;
+    width: 99.5%;
     height: 100%;
     border-top: 1px solid;
     border-right: 1px solid;
