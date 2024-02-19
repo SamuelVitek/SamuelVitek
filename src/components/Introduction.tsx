@@ -39,7 +39,7 @@ const Introduction = () => {
                     h='2.5em'
                     size='sm'
                     as={Link}
-                    href='/SamuelVitek/about'
+                    href={`/about`}
                     className='btn'
                     borderRadius='0px'
                     borderBottom='1px solid'
