@@ -14,7 +14,7 @@ export default function Logo(props: any) {
         <Box
             {...props}
             as={Link}
-            href='/'
+            href='/SamuelVitek/'
             onMouseEnter={handleHover}
             onMouseLeave={handleHover}
             _hover={{
