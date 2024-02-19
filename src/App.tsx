@@ -11,12 +11,12 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 
 const router = createBrowserRouter([
-    { path: `${process.env.PUBLIC_URL}/`, element: <Home/> },
-    { path: `${process.env.PUBLIC_URL}/about`, element: <About/> },
-    { path: `${process.env.PUBLIC_URL}/work`, element: <Work/> },
-    { path: `${process.env.PUBLIC_URL}/education`, element: <Edu/> },
-    { path: `${process.env.PUBLIC_URL}/projects`, element: <Projects/> },
-    { path: `${process.env.PUBLIC_URL}/contact`, element: <Contact/> }
+    { path: `/${process.env.PUBLIC_URL}`, element: <Home/> },
+    { path: `/${process.env.PUBLIC_URL}/about`, element: <About/> },
+    { path: `/${process.env.PUBLIC_URL}/work`, element: <Work/> },
+    { path: `/${process.env.PUBLIC_URL}/education`, element: <Edu/> },
+    { path: `/${process.env.PUBLIC_URL}/projects`, element: <Projects/> },
+    { path: `/${process.env.PUBLIC_URL}/contact`, element: <Contact/> }
 ])
 
 function App() {
