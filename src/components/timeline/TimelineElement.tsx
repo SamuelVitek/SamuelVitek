@@ -41,7 +41,7 @@ const TimelineElement = ({props, isWork}: PropsType) => {
                     </Text>
                 </Flex>
                 <Flex>
-                    <Image src={props.logo} fit='cover' alt='Logo' w='3.125em' h='3.125em' borderRadius='full'/>
+                    <Image src={process.env.PUBLIC_URL + props.logo} fit='cover' alt='Logo' w='3.125em' h='3.125em' borderRadius='full'/>
                 </Flex>
             </Flex>
             {props.skills.map((skill, index) => (
