@@ -29,6 +29,10 @@ function App() {
                             <Routes>
                                 <Route path="/" element={<Home />}/>
                                 <Route path="/about" element={<About />}/>
+                                <Route path="/work" element={<Work />}/>
+                                <Route path="/education" element={<Edu />}/>
+                                <Route path="/projects" element={<Projects />}/>
+                                <Route path="/contact" element={<Contact />}/>
                             </Routes>
                             {/*<RouterProvider router={router} />*/}
                         </Flex>

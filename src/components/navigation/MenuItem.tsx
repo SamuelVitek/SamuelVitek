@@ -12,7 +12,7 @@ const MenuItem = ({ children, isLast, to = "/", ...rest }: MenuItemProps) => {
 
     return (
         <Link
-            href={to}
+            href={process.env.PUBLIC_URL + to}
             pb={2}
             borderBottom={(activePath === to && !isLast) ? '2px solid white' : ''}
             _hover={{

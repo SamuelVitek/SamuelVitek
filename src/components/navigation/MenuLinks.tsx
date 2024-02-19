@@ -21,11 +21,11 @@ const MenuLinks = ({ isOpen }: MenuLinksProps) => {
                 justify={["center", "space-between", "flex-end", "flex-end"]}
                 direction={["column", "row", "row", "row"]}
             >
-                <MenuItem to="/about">About me</MenuItem>
-                <MenuItem to="/work">Work Experience</MenuItem>
-                <MenuItem to="/education">Education</MenuItem>
-                <MenuItem to="/projects">Projects</MenuItem>
-                <MenuItem to="/contact" isLast>
+                <MenuItem to="/#about">About me</MenuItem>
+                <MenuItem to="/#work">Work Experience</MenuItem>
+                <MenuItem to="/#education">Education</MenuItem>
+                <MenuItem to="/#projects">Projects</MenuItem>
+                <MenuItem to="/#contact" isLast>
                     <Button
                         size="sm"
                         rounded="md"
