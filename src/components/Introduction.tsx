@@ -18,7 +18,7 @@ const Introduction = () => {
                         <Box as='span' color='cyan.400'>
                             Software Developer {'\n'}
                         </Box>
-                        because as a kid I thought I should study IT since I played a lot of games. I am a technology enthusiast with experience and with {'\n'}
+                        because as a kid I thought I should study IT as I played a lot of games. Now I am a technology enthusiast with experience and with {'\n'}
                         <Box as='span' color='cyan.400'>
                             great desire to learn
                         </Box>
