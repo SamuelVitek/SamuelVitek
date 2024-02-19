@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import { ChakraProvider, Flex, theme } from "@chakra-ui/react";
-import {BrowserRouter, Route, RouterProvider, Routes} from "react-router-dom";
+import {HashRouter, Route, RouterProvider, Routes} from "react-router-dom";
 import Nav from "./components/navigation/Nav";
 import About from "./pages/About";
 import Home from "./pages/Home";
@@ -23,16 +23,14 @@ function App() {
     return (
         <div className="App">
             <ChakraProvider theme={theme}>
-                <BrowserRouter basename={`${process.env.PUBLIC_URL}`}>
-                    <Routes>
-                        <Route path='/about' element={<About/>} />
-                    </Routes>
+                <HashRouter basename={`${process.env.PUBLIC_URL}`}>
+                    <Route path='/about' element={<About/>} />
                     <Nav/>
                     <div className="App-body">
                         <Flex w='75%' flexDirection='column'>
                         </Flex>
                     </div>
-                </BrowserRouter>
+                </HashRouter>
             </ChakraProvider>
         </div>
     );
