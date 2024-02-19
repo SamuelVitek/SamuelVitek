@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import { ChakraProvider, Flex, theme } from "@chakra-ui/react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {BrowserRouter, Route, RouterProvider} from "react-router-dom";
 import Nav from "./components/navigation/Nav";
 import About from "./pages/About";
 import Home from "./pages/Home";
@@ -10,25 +10,27 @@ import Work from "./pages/Work";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 
-const router = createBrowserRouter([
-    { path: `/SamuelVitek/`, element: <Home/> },
-    { path: `/about`, element: <About/> },
-    { path: `/work`, element: <Work/> },
-    { path: `/education`, element: <Edu/> },
-    { path: `/projects`, element: <Projects/> },
-    { path: `/contact`, element: <Contact/> }
-])
+// const router = createBrowserRouter([
+//     { path: `/SamuelVitek/`, element: <Home/> },
+//     { path: `/about`, element: <About/> },
+//     { path: `/work`, element: <Work/> },
+//     { path: `/education`, element: <Edu/> },
+//     { path: `/projects`, element: <Projects/> },
+//     { path: `/contact`, element: <Contact/> }
+// ])
 
 function App() {
     return (
         <div className="App">
             <ChakraProvider theme={theme}>
+                <BrowserRouter basename={`${process.env.PUBLIC_URL}`}>
+                    <Route path='/about' element={<About/>} />
                     <Nav/>
                     <div className="App-body">
                         <Flex w='75%' flexDirection='column'>
-                            <RouterProvider router={router} />
                         </Flex>
                     </div>
+                </BrowserRouter>
             </ChakraProvider>
         </div>
     );
