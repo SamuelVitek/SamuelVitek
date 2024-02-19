@@ -11,12 +11,12 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 
 const router = createBrowserRouter([
-    { path: '/', element: <Home/> },
-    { path: '/about', element: <About/> },
-    { path: '/work', element: <Work/> },
-    { path: '/education', element: <Edu/> },
-    { path: '/projects', element: <Projects/> },
-    { path: '/contact', element: <Contact/> }
+    { path: '/SamuelVitek/', element: <Home/> },
+    { path: '/SamuelVitek/about', element: <About/> },
+    { path: '/SamuelVitek/work', element: <Work/> },
+    { path: '/SamuelVitek/education', element: <Edu/> },
+    { path: '/SamuelVitek/projects', element: <Projects/> },
+    { path: '/SamuelVitek/contact', element: <Contact/> }
 ])
 
 function App() {
