@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import { ChakraProvider, Flex, theme } from "@chakra-ui/react";
-import { createHashRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Nav from "./components/navigation/Nav";
 import About from "./pages/About";
 import Home from "./pages/Home";
@@ -10,7 +10,7 @@ import Work from "./pages/Work";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 
-const router = createHashRouter([
+const router = createBrowserRouter([
     { path: `/SamuelVitek/`, element: <Home/> },
     { path: `/about`, element: <About/> },
     { path: `/work`, element: <Work/> },
@@ -25,7 +25,7 @@ function App() {
             <ChakraProvider theme={theme}>
                     <Nav/>
                     <div className="App-body">
-                        <Flex w='75%'>
+                        <Flex w='75%' flexDirection='column'>
                             <RouterProvider router={router} />
                         </Flex>
                     </div>
