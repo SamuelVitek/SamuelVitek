@@ -30,7 +30,7 @@ function App() {
                     </Routes>
                     <div className="App-body">
                         <Flex w='75%'>
-                            <RouterProvider router={router} />
+                            {/*<RouterProvider router={router} />*/}
                         </Flex>
                     </div>
             </ChakraProvider>
