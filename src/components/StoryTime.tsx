@@ -1,6 +1,6 @@
 import React from 'react';
 import {Flex, Heading, ListItem, Text, UnorderedList} from '@chakra-ui/react'
-import { story } from "../data/Texts";
+import { story } from "../data/Others";
 
 const StoryTime = () => {
     return (

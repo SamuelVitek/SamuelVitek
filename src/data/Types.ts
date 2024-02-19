@@ -36,3 +36,8 @@ export type Data = {
     skills: Array<Skills | Tools | Field>
     date: string;
 }
+
+export type SocialsType = {
+    name: string;
+    link: string;
+}
