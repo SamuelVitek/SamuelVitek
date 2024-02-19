@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import { ChakraProvider, Flex, theme } from "@chakra-ui/react";
-import { createHashRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Nav from "./components/navigation/Nav";
 import About from "./pages/About";
 import Home from "./pages/Home";
@@ -10,13 +10,13 @@ import Work from "./pages/Work";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 
-const router = createHashRouter([
-    { path: '/SamuelVitek/', element: <Home/> },
-    { path: '/SamuelVitek/about', element: <About/> },
-    { path: '/SamuelVitek/work', element: <Work/> },
-    { path: '/SamuelVitek/education', element: <Edu/> },
-    { path: '/SamuelVitek/projects', element: <Projects/> },
-    { path: '/SamuelVitek/contact', element: <Contact/> }
+const router = createBrowserRouter([
+    { path: `${process.env.PUBLIC_URL}/`, element: <Home/> },
+    { path: `${process.env.PUBLIC_URL}/about`, element: <About/> },
+    { path: `${process.env.PUBLIC_URL}/work`, element: <Work/> },
+    { path: `${process.env.PUBLIC_URL}/education`, element: <Edu/> },
+    { path: `${process.env.PUBLIC_URL}/projects`, element: <Projects/> },
+    { path: `${process.env.PUBLIC_URL}/contact`, element: <Contact/> }
 ])
 
 function App() {
