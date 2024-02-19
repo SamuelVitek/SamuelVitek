@@ -1,4 +1,4 @@
-import {SocialsType} from "./Types";
+import {Lang, SocialsType} from "./Types";
 
 export const story: string[] = [
     'Fortunately, during High school where I studied Web Development and Web Design, I found out that it will during my studies become my passion.',
@@ -20,5 +20,38 @@ export const socials: SocialsType[] = [
     {
         name: 'kaggle',
         link: 'https://www.kaggle.com/samuelvitek'
+    },
+]
+
+export const langs: Lang[] = [
+    {
+        lang: 'Czech',
+        level: 'C2',
+        value: 100
+    },
+    {
+        lang: 'Slovak',
+        level: 'C1',
+        value: 84
+    },
+    {
+        lang: 'English',
+        level: 'C1',
+        value: 84
+    },
+    {
+        lang: 'German',
+        level: 'A2',
+        value: 32
+    },
+    {
+        lang: 'Spanish',
+        level: 'A1',
+        value: 16
+    },
+    {
+        lang: 'Finnish',
+        level: 'A1',
+        value: 16
     },
 ]

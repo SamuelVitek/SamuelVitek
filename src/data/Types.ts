@@ -41,3 +41,9 @@ export type SocialsType = {
     name: string;
     link: string;
 }
+
+export type Lang = {
+    lang: string;
+    level: string;
+    value: number;
+}
