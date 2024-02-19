@@ -24,12 +24,12 @@ function App() {
         <div className="App">
             <ChakraProvider theme={theme}>
                     <Nav/>
-                    <Routes>
-                        <Route path="/" element={<Home />}/>
-                        <Route path="/about" element={<About />}/>
-                    </Routes>
                     <div className="App-body">
                         <Flex w='75%'>
+                            <Routes>
+                                <Route path="/" element={<Home />}/>
+                                <Route path="/about" element={<About />}/>
+                            </Routes>
                             {/*<RouterProvider router={router} />*/}
                         </Flex>
                     </div>
