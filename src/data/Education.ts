@@ -1,4 +1,4 @@
-import { Data, Field } from "./Types";
+import {Data, Field} from "./Types";
 
 export const Education: Data[] = [
     {

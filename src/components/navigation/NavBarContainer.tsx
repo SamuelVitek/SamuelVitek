@@ -1,11 +1,11 @@
-import React, { ReactNode } from 'react';
-import { Flex } from "@chakra-ui/react";
+import React, {ReactNode} from 'react';
+import {Flex} from "@chakra-ui/react";
 
 interface NavBarContainerProps {
     children: ReactNode;
 }
 
-const NavBarContainer = ({ children, ...props }: NavBarContainerProps) => {
+const NavBarContainer = ({children, ...props}: NavBarContainerProps) => {
     return (
         <Flex
             as="nav"

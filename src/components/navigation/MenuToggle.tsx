@@ -1,15 +1,15 @@
 import React from "react";
-import { Box } from "@chakra-ui/react";
+import {Box} from "@chakra-ui/react";
 
 interface MenuToggleProps {
     toggle: () => void;
     isOpen: boolean;
 }
 
-const MenuToggle = ({ toggle, isOpen }: MenuToggleProps) => {
+const MenuToggle = ({toggle, isOpen}: MenuToggleProps) => {
     return (
-        <Box display={{ base: "block", md: "none" }} onClick={toggle}>
-            {isOpen ? <CloseIcon /> : <MenuIcon />}
+        <Box display={{base: "block", md: "none"}} onClick={toggle}>
+            {isOpen ? <CloseIcon/> : <MenuIcon/>}
         </Box>
     );
 };
@@ -32,7 +32,7 @@ const MenuIcon = () => (
         fill="white"
     >
         <title>Menu</title>
-        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
     </svg>
 );
 

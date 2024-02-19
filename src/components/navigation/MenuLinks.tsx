@@ -1,19 +1,19 @@
 import {Box, Button, Text, Stack} from "@chakra-ui/react";
 import React from "react";
 import MenuItem from "./MenuItem";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faPaperPlane} from "@fortawesome/free-solid-svg-icons";
 
 interface MenuLinksProps {
     isOpen: boolean;
 }
 
-const MenuLinks = ({ isOpen }: MenuLinksProps) => {
+const MenuLinks = ({isOpen}: MenuLinksProps) => {
     return (
         <Box
-            display={{ base: isOpen ? "block" : "none", md: "block" }}
-            flexBasis={{ base: "100%", md: "auto" }}
-            pt={{ base: "5", md: "0" }}
+            display={{base: isOpen ? "block" : "none", md: "block"}}
+            flexBasis={{base: "100%", md: "auto"}}
+            pt={{base: "5", md: "0"}}
         >
             <Stack
                 spacing={8}

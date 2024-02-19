@@ -1,9 +1,9 @@
 import React from 'react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Flex, Heading, Image, Tag, Text } from "@chakra-ui/react";
-import { faBriefcase, faLocationDot, faGraduationCap } from "@fortawesome/free-solid-svg-icons";
-import { Data } from "../../data/Types";
-import { VerticalTimelineElement } from "react-vertical-timeline-component";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {Flex, Heading, Image, Tag, Text} from "@chakra-ui/react";
+import {faBriefcase, faLocationDot, faGraduationCap} from "@fortawesome/free-solid-svg-icons";
+import {Data} from "../../data/Types";
+import {VerticalTimelineElement} from "react-vertical-timeline-component";
 
 interface PropsType {
     props: Data;
@@ -41,7 +41,8 @@ const TimelineElement = ({props, isWork}: PropsType) => {
                     </Text>
                 </Flex>
                 <Flex>
-                    <Image src={process.env.PUBLIC_URL + props.logo} fit='cover' alt='Logo' w='3.125em' h='3.125em' borderRadius='full'/>
+                    <Image src={process.env.PUBLIC_URL + props.logo} fit='cover' alt='Logo' w='3.125em' h='3.125em'
+                           borderRadius='full'/>
                 </Flex>
             </Flex>
             {props.skills.map((skill, index) => (

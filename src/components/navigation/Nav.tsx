@@ -12,8 +12,8 @@ const Nav = (props: any) => {
     return (
         <NavBarContainer {...props}>
             <Logo/>
-            <MenuToggle toggle={toggle} isOpen={isOpen} />
-            <MenuLinks isOpen={isOpen} />
+            <MenuToggle toggle={toggle} isOpen={isOpen}/>
+            <MenuLinks isOpen={isOpen}/>
         </NavBarContainer>
     );
 };
