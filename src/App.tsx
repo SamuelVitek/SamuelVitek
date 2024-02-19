@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import { ChakraProvider, Flex, theme } from "@chakra-ui/react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import Nav from "./components/navigation/Nav";
 import About from "./pages/About";
 import Home from "./pages/Home";
@@ -10,7 +10,7 @@ import Work from "./pages/Work";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     { path: `/${process.env.PUBLIC_URL}`, element: <Home/> },
     { path: `/${process.env.PUBLIC_URL}/about`, element: <About/> },
     { path: `/${process.env.PUBLIC_URL}/work`, element: <Work/> },
