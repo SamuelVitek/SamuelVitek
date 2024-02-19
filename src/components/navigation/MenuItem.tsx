@@ -8,11 +8,12 @@ interface MenuItemProps {
 }
 
 const MenuItem = ({ children, isLast, to = "/", ...rest }: MenuItemProps) => {
-    const activePath = window.location.pathname;
+    const activePath = '/' + window.location.hash;
+    const href = process.env.PUBLIC_URL + to;
 
     return (
         <Link
-            href={process.env.PUBLIC_URL + to}
+            href={href}
             pb={2}
             borderBottom={(activePath === to && !isLast) ? '2px solid white' : ''}
             _hover={{

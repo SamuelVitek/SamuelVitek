@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import { ChakraProvider, Flex, theme } from "@chakra-ui/react";
-import {createBrowserRouter, Route, RouterProvider, Routes} from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Nav from "./components/navigation/Nav";
 import About from "./pages/About";
 import Home from "./pages/Home";
@@ -9,15 +9,6 @@ import Edu from "./pages/Edu";
 import Work from "./pages/Work";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
-
-// const router = createBrowserRouter([
-//     { path: '/SamuelVitek/', element: <Home/> },
-//     { path: '/SamuelVitek/about', element: <About/> },
-//     { path: '/SamuelVitek/work', element: <Work/> },
-//     { path: '/SamuelVitek/education', element: <Edu/> },
-//     { path: '/SamuelVitek/projects', element: <Projects/> },
-//     { path: '/SamuelVitek/contact', element: <Contact/> }
-// ])
 
 function App() {
     return (
@@ -34,7 +25,6 @@ function App() {
                                 <Route path="/projects" element={<Projects />}/>
                                 <Route path="/contact" element={<Contact />}/>
                             </Routes>
-                            {/*<RouterProvider router={router} />*/}
                         </Flex>
                     </div>
             </ChakraProvider>
