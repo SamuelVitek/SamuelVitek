@@ -1,5 +1,5 @@
 import React from 'react';
-import {Flex, Heading} from "@chakra-ui/react";
+import { Flex, Heading } from "@chakra-ui/react";
 import Timeline from "../components/timeline/Timeline";
 
 const Work = () => {

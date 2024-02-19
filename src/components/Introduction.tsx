@@ -1,11 +1,9 @@
 import React from 'react';
 import { Box, Button, Flex, Image, Link, Text } from "@chakra-ui/react";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowRight, faDownload} from "@fortawesome/free-solid-svg-icons";
-import {faGithub, faKaggle, faLinkedin} from "@fortawesome/free-brands-svg-icons";
-import {socials} from "../data/Others";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { socials } from "../data/Others";
 import Socials from "./Socials";
-
 
 const Introduction = () => {
     return (

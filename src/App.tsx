@@ -1,8 +1,8 @@
 import './App.css';
 import React from 'react';
-import {ChakraProvider, Flex, theme} from "@chakra-ui/react";
-import Nav from "./components/navigation/Nav";
+import { ChakraProvider, Flex, theme } from "@chakra-ui/react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Nav from "./components/navigation/Nav";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import Edu from "./pages/Edu";

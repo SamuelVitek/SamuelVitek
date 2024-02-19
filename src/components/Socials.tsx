@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faKaggle, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import {Link, Text} from "@chakra-ui/react";
+import { Link, Text } from "@chakra-ui/react";
 import { SocialsType } from "../data/Types";
 
 interface SocialsProps {
