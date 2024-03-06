@@ -2,7 +2,6 @@
   "name": "samuels-portfolio",
   "version": "1.1.0",
   "private": true,
-  "homepage": "https://samuelvitek.github.io/SamuelVitek/",
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
     "@chakra-ui/theme": "^3.3.1",
