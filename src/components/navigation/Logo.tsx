@@ -25,10 +25,6 @@ const Logo: React.FC = () => {
             <Text fontSize='lg' fontWeight='bold'>
                 Samuel Vítek
             </Text>
-            <Text fontSize='2xs' color={isHovering ? 'cyan.400' : 'white'}>
-                <FontAwesomeIcon icon={faHouse}/>
-                Home
-            </Text>
         </Box>
     )
 }
