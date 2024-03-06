@@ -1,5 +1,6 @@
 import './App.css';
 import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { ChakraProvider, Flex, theme } from '@chakra-ui/react';
 import { Route, Routes } from 'react-router-dom';
 import Nav from './components/navigation/Nav';
@@ -14,18 +15,19 @@ function App() {
     return (
         <div className='App'>
             <ChakraProvider theme={theme}>
-                <Nav/>
+                <Nav />
                 <div className='App-body'>
                     <Flex w='75%' mt='30vh'>
                         <Routes>
-                            <Route path='/' element={<Home/>}/>
-                            <Route path='/about' element={<About/>}/>
-                            <Route path='/work' element={<Work/>}/>
-                            <Route path='/education' element={<Edu/>}/>
-                            <Route path='/projects' element={<Projects/>}/>
-                            <Route path='/contact' element={<Contact/>}/>
+                            <Route path='/' element={<Home />} />
+                            <Route path='/about' element={<About />} />
+                            <Route path='/work' element={<Work />} />
+                            <Route path='/education' element={<Edu />} />
+                            <Route path='/projects' element={<Projects />} />
+                            <Route path='/contact' element={<Contact />} />
                         </Routes>
                     </Flex>
+                    <Analytics />
                 </div>
             </ChakraProvider>
         </div>
