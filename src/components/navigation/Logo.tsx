@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import { Box, Link, Text } from '@chakra-ui/react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse } from '@fortawesome/free-solid-svg-icons';
 
 const Logo: React.FC = () => {
     const [isHovering, setIsHovering] = useState<boolean>(false);
