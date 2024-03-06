@@ -1,19 +1,16 @@
-import React, {ReactNode} from 'react';
-import {Flex} from "@chakra-ui/react";
+import React, { ReactNode } from 'react';
+import { Flex } from '@chakra-ui/react';
 
-interface NavBarContainerProps {
-    children: ReactNode;
-}
 
-const NavBarContainer = ({children, ...props}: NavBarContainerProps) => {
+const NavBarContainer: React.FC<{ children: ReactNode }> = ({ children, ...props }) => {
     return (
         <Flex
-            as="nav"
+            as='nav'
             position='absolute'
-            align="center"
-            justify="space-between"
-            wrap="wrap"
-            w="100%"
+            align='center'
+            justify='space-between'
+            wrap='wrap'
+            w='100%'
             p={8}
             backgroundColor=''
             color={'white'}

@@ -1,7 +1,7 @@
 import React from 'react';
-import {Flex, Heading, ListItem, Text, UnorderedList} from '@chakra-ui/react'
+import { Flex, Heading, ListItem, Text, UnorderedList } from '@chakra-ui/react'
 
-const Datacamp = () => {
+const Datacamp: React.FC = () => {
     return (
         <Flex flexDirection='column' mb='10'>
             <Heading mb='5'>

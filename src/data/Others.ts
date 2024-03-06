@@ -1,4 +1,4 @@
-import {Lang, SocialsType} from "./Types";
+import { Lang, SocialsType } from './Types';
 
 export const story: string[] = [
     'Fortunately, during High school where I studied Web Development and Web Design, I found out that it will during my studies become my passion.',

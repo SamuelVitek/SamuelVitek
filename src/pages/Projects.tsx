@@ -1,7 +1,7 @@
 import React from 'react';
-import {Flex, Heading} from "@chakra-ui/react";
+import { Flex, Heading } from '@chakra-ui/react';
 
-const Projects = () => {
+const Projects: React.FC = () => {
     return (
         <Flex w='100%' flexDirection='column' textAlign='center'>
             <Heading>

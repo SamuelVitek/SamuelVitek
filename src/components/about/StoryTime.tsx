@@ -1,8 +1,8 @@
 import React from 'react';
-import {Flex, Heading, ListItem, Text, UnorderedList} from '@chakra-ui/react'
-import {story} from "../../data/Others";
+import { Flex, Heading, ListItem, Text, UnorderedList } from '@chakra-ui/react'
+import { story } from '../../data/Others';
 
-const StoryTime = () => {
+const StoryTime: React.FC = () => {
     return (
         <Flex flexDirection='column'>
             <Heading mb='5'>

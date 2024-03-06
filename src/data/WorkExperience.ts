@@ -1,4 +1,4 @@
-import {Data, Skills, Tools} from "./Types";
+import { Data, Skills, Tools } from './Types';
 
 export const WorkExperience: Data[] = [
     {

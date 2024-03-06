@@ -1,17 +1,13 @@
 import React from 'react';
-import TimelineElement from "./TimelineElement";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {WorkExperience as work} from "../../data/WorkExperience";
-import {Education as edu} from "../../data/Education";
-import {faPlay} from "@fortawesome/free-solid-svg-icons";
-import {VerticalTimeline, VerticalTimelineElement} from 'react-vertical-timeline-component';
+import TimelineElement from './TimelineElement';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { WorkExperience as work } from '../../data/WorkExperience';
+import { Education as edu } from '../../data/Education';
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
-interface TimelineProps {
-    isWork?: boolean;
-}
-
-const Timeline = ({isWork = false}: TimelineProps) => {
+const Timeline: React.FC<{ isWork?: boolean }> = ({ isWork = false }) => {
     return (
         <VerticalTimeline>
             {isWork ? work.map((d, index) => (
@@ -20,7 +16,7 @@ const Timeline = ({isWork = false}: TimelineProps) => {
                 <TimelineElement key={index} props={d} isWork={false}/>
             ))}
             <VerticalTimelineElement
-                iconStyle={{background: 'rgb(16, 204, 82)', color: '#fff'}}
+                iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
                 icon={<FontAwesomeIcon icon={faPlay}/>}
             />
         </VerticalTimeline>

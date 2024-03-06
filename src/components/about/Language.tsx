@@ -1,10 +1,8 @@
 import React from 'react';
-import {Box, Text, CircularProgress, CircularProgressLabel} from "@chakra-ui/react";
-import {Lang} from "../../data/Types";
+import { Box, Text, CircularProgress, CircularProgressLabel } from '@chakra-ui/react';
+import { Lang } from '../../data/Types';
 
-const Language = ({lang, level, value}: Lang) => {
-
-
+const Language: React.FC<Lang> = ({ lang, level, value }) => {
     return (
         <Box display='flex' flexDirection='column' alignItems='center'>
             <Text mb='3'>{lang}</Text>

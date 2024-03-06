@@ -1,11 +1,11 @@
 import React from 'react';
-import {Box, Button, Flex, Heading, Image, Link, Text} from "@chakra-ui/react";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
-import {socials} from "../data/Others";
-import Socials from "./Socials";
+import { Box, Button, Flex, Heading, Image, Link, Text } from '@chakra-ui/react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { socials } from '../data/Others';
+import Socials from './Socials';
 
-const Introduction = () => {
+const Introduction: React.FC = () => {
     return (
         <Flex flexDirection='column' textAlign='left'>
             <Flex alignItems='center'>
