@@ -14,7 +14,7 @@ const Logo: React.FC = () => {
     return (
         <Box
             as={Link}
-            href='/SamuelVitek/'
+            href='/'
             onMouseEnter={handleHover}
             onMouseLeave={handleHover}
             _hover={{

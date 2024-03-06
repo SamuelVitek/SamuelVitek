@@ -41,7 +41,7 @@ const Introduction: React.FC = () => {
                     h='2.5em'
                     size='sm'
                     as={Link}
-                    href={`${process.env.PUBLIC_URL}/#about`}
+                    href={`/about`}
                     className='btn'
                     borderRadius='0px'
                     borderBottom='1px solid'
