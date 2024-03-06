@@ -1,27 +1,33 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 import { Link, Text } from '@chakra-ui/react';
 
 interface MenuItemProps {
     children: ReactNode;
     isLast?: boolean;
+    setActive?: () => void;
     to: string;
 }
 
-const MenuItem: React.FC<MenuItemProps> = ({ children, isLast, to = '/', ...rest }) => {
-    const activePath = '/' + window.location.hash;
-    const href = process.env.PUBLIC_URL + to;
+const MenuItem: React.FC<MenuItemProps> = ({ children, isLast, setActive, to, ...rest }) => {
+    const [activePath, setActivePath] = useState<string>();
+
+    useEffect(() => {
+        setActivePath(window.location.pathname)
+    }, [window.location.pathname]);
 
     return (
         <Link
-            href={href}
+            href={to}
             pb={2}
-            borderBottom={(activePath === to && !isLast) ? '2px solid white' : ''}
+            onClick={setActive}
+            borderBottom='2px solid'
+            borderColor={activePath === to && !isLast ? 'cyan.400' : 'transparent'}
             _hover={{
                 textDecoration: 'none',
-                borderBottom: !isLast ? '2px solid white' : ''
+                borderBottom: !isLast && activePath != to ? '2px solid white' : ''
             }}
         >
-            <Text display='block' {...rest}>
+            <Text display='block' {...rest} color={activePath === to ? 'cyan.400' : 'white'}>
                 {children}
             </Text>
         </Link>

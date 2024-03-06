@@ -2,9 +2,11 @@ import React from 'react';
 import MenuItem from './MenuItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Box, Button, Text, Stack } from '@chakra-ui/react';
-import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 const MenuLinks: React.FC<{ isOpen: boolean }> = ({ isOpen }) => {
+
+
     return (
         <Box
             display={{ base: isOpen ? 'block' : 'none', md: 'block' }}
@@ -17,6 +19,9 @@ const MenuLinks: React.FC<{ isOpen: boolean }> = ({ isOpen }) => {
                 justify={['center', 'space-between', 'flex-end', 'flex-end']}
                 direction={['column', 'row', 'row', 'row']}
             >
+                <MenuItem to='/' isLast>
+                    <FontAwesomeIcon icon={faHouse}/>
+                </MenuItem>
                 <MenuItem to='/about'>About me</MenuItem>
                 <MenuItem to='/work'>Work Experience</MenuItem>
                 <MenuItem to='/education'>Education</MenuItem>
