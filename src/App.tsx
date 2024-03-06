@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import { ChakraProvider, Flex, theme } from '@chakra-ui/react';
 import { Route, Routes } from 'react-router-dom';
 import Nav from './components/navigation/Nav';
@@ -28,6 +29,7 @@ function App() {
                         </Routes>
                     </Flex>
                     <Analytics />
+                    <SpeedInsights />
                 </div>
             </ChakraProvider>
         </div>
