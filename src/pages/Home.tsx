@@ -1,12 +1,9 @@
 import React from 'react';
-import Introduction from "../components/Introduction";
-import { Flex } from "@chakra-ui/react";
+import Introduction from '../components/Introduction';
 
-const Home = () => {
+const Home: React.FC = () => {
     return (
-        <Flex>
-            <Introduction/>
-        </Flex>
+        <Introduction/>
     );
 };
 

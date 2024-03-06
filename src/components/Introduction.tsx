@@ -1,36 +1,38 @@
 import React from 'react';
-import { Box, Button, Flex, Image, Link, Text } from "@chakra-ui/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { socials } from "../data/Others";
-import Socials from "./Socials";
+import { Box, Button, Flex, Heading, Image, Link, Text } from '@chakra-ui/react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { socials } from '../data/Others';
+import Socials from './Socials';
 
-const Introduction = () => {
+const Introduction: React.FC = () => {
     return (
         <Flex flexDirection='column' textAlign='left'>
             <Flex alignItems='center'>
                 <Flex flexDirection='column' pe='50px'>
-                    <Text fontSize='calc(24px + 2vmin)' fontWeight='600' mb='2'>
+                    <Heading fontWeight='600' mb='2'>
                         Hello, Samuel Vítek here 👋👋👋
-                    </Text>
-                    <Text fontSize='calc(12px + 2vmin)' fontWeight='500'>
+                    </Heading>
+                    <Text fontSize='2xl' fontWeight='500'>
                         I am a student who became a {'\n'}
                         <Box as='span' color='cyan.400'>
                             Software Developer {'\n'}
                         </Box>
-                        because as a kid I thought I should study IT as I played a lot of games. Now I am a technology enthusiast with experience and with {'\n'}
+                        because as a kid I thought I should study IT as I played a lot of games. Now I am a technology
+                        enthusiast with experience and with {'\n'}
                         <Box as='span' color='cyan.400'>
                             great desire to learn
                         </Box>
-                        . Analytic thinking, being collective friendly, and always curious are attributes that I think describe me the best.
+                        . Analytic thinking, being collective friendly, and always curious are attributes that I think
+                        describe me the best.
                     </Text>
                 </Flex>
                 <Image
                     src='img/mugshot.jpg'
                     alt="Sam's mugshot"
-                    borderRadius='50%'
+                    borderRadius='full'
                     fit='cover'
-                    boxSize='250px'
+                    boxSize='10em'
                 />
             </Flex>
             <Flex>
@@ -54,12 +56,12 @@ const Introduction = () => {
                     <Box as='span' color='cyan.400' me='2'>
                         More about me
                     </Box>
-                    <FontAwesomeIcon icon={faArrowRight} />
+                    <FontAwesomeIcon icon={faArrowRight}/>
                 </Button>
             </Flex>
             <Flex mt='8' ms='3' w='10%' justifyContent='space-between'>
                 {socials.map(social => (
-                    <Socials social={social} key={social.name} />
+                    <Socials social={social} key={social.name}/>
                 ))}
             </Flex>
         </Flex>

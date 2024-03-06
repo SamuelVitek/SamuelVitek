@@ -1,22 +1,22 @@
 import React from 'react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Flex, Heading, Image, Tag, Text } from "@chakra-ui/react";
-import { faBriefcase, faLocationDot, faGraduationCap } from "@fortawesome/free-solid-svg-icons";
-import { Data } from "../../data/Types";
-import { VerticalTimelineElement } from "react-vertical-timeline-component";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Flex, Heading, Image, Tag, Text } from '@chakra-ui/react';
+import { faBriefcase, faLocationDot, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import { Data } from '../../data/Types';
+import { VerticalTimelineElement } from 'react-vertical-timeline-component';
 
 interface PropsType {
     props: Data;
     isWork: boolean;
 }
 
-const TimelineElement = ({props, isWork}: PropsType) => {
+const TimelineElement: React.FC<PropsType> = ({ props, isWork }) => {
     const bgColor = isWork ? '#02294f' : '#c53030';
     const borderColor = isWork ? '#0e4c8a' : '#f56565';
 
     return (
         <VerticalTimelineElement
-            className="vertical-timeline-element--work"
+            className='vertical-timeline-element--work'
             contentStyle={{
                 background: bgColor,
                 color: '#fff',
@@ -25,23 +25,24 @@ const TimelineElement = ({props, isWork}: PropsType) => {
                 textAlign: 'left',
                 paddingBottom: '0.75em'
             }}
-            contentArrowStyle={{borderRight: '10px solid ' + bgColor}}
+            contentArrowStyle={{ borderRight: '10px solid ' + bgColor }}
             date={props.date}
-            iconStyle={{background: bgColor, color: '#fff'}}
+            iconStyle={{ background: bgColor, color: '#fff' }}
             icon={<FontAwesomeIcon icon={isWork ? faBriefcase : faGraduationCap}/>}
         >
             <Flex>
                 <Flex w='80%' flexDirection='column'>
-                    <Heading style={{color: 'white'}}>{props.title}</Heading>
-                    <Text style={{margin: '0'}}>
+                    <Heading style={{ color: 'white' }}>{props.title}</Heading>
+                    <Text style={{ margin: '0' }}>
                         <FontAwesomeIcon icon={isWork ? faBriefcase : faGraduationCap}/> {props.company}
                     </Text>
-                    <Text style={{margin: '0 0 2.25em 0'}}>
+                    <Text style={{ margin: '0 0 2.25em 0' }}>
                         <FontAwesomeIcon icon={faLocationDot}/> {props.location}
                     </Text>
                 </Flex>
                 <Flex>
-                    <Image src={process.env.PUBLIC_URL + props.logo} fit='cover' alt='Logo' w='3.125em' h='3.125em' borderRadius='full'/>
+                    <Image src={process.env.PUBLIC_URL + props.logo} fit='cover' alt='Logo' w='3.125em' h='3.125em'
+                           borderRadius='full'/>
                 </Flex>
             </Flex>
             {props.skills.map((skill, index) => (

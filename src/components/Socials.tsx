@@ -1,25 +1,21 @@
 import React from 'react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faKaggle, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { Link, Text } from "@chakra-ui/react";
-import { SocialsType } from "../data/Types";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faKaggle, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { Link, Text } from '@chakra-ui/react';
+import { SocialsType } from '../data/Types';
 
-interface SocialsProps {
-    social: SocialsType;
-}
-
-const Socials = ({ social }: SocialsProps) => {
+const Socials: React.FC<{ social: SocialsType }> = ({ social }) => {
 
     const Icon = () => {
         switch (social.name) {
             case 'linkedin':
-                return <FontAwesomeIcon icon={faLinkedin} />
+                return <FontAwesomeIcon icon={faLinkedin}/>
             case 'kaggle':
-                return <FontAwesomeIcon icon={faKaggle} />
+                return <FontAwesomeIcon icon={faKaggle}/>
             case 'github':
-                return <FontAwesomeIcon icon={faGithub} />
+                return <FontAwesomeIcon icon={faGithub}/>
             default:
-                return <FontAwesomeIcon icon={faLinkedin} />
+                return <FontAwesomeIcon icon={faLinkedin}/>
         }
     }
 
@@ -35,7 +31,7 @@ const Socials = ({ social }: SocialsProps) => {
                 color: 'cyan.400'
             }}
         >
-            { <Icon /> }
+            {<Icon/>}
         </Text>
     );
 };

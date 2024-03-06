@@ -1,5 +1,5 @@
-import React, { ReactNode } from "react";
-import { Link, Text } from "@chakra-ui/react";
+import React, { ReactNode } from 'react';
+import { Link, Text } from '@chakra-ui/react';
 
 interface MenuItemProps {
     children: ReactNode;
@@ -7,7 +7,7 @@ interface MenuItemProps {
     to: string;
 }
 
-const MenuItem = ({ children, isLast, to = "/", ...rest }: MenuItemProps) => {
+const MenuItem: React.FC<MenuItemProps> = ({ children, isLast, to = '/', ...rest }) => {
     const activePath = '/' + window.location.hash;
     const href = process.env.PUBLIC_URL + to;
 
@@ -21,7 +21,7 @@ const MenuItem = ({ children, isLast, to = "/", ...rest }: MenuItemProps) => {
                 borderBottom: !isLast ? '2px solid white' : ''
             }}
         >
-            <Text display="block" {...rest}>
+            <Text display='block' {...rest}>
                 {children}
             </Text>
         </Link>
