@@ -11,9 +11,9 @@ const Nav: React.FC = () => {
 
     return (
         <NavBarContainer>
-            <Logo/>
-            <MenuToggle toggle={toggle} isOpen={isOpen}/>
-            <MenuLinks isOpen={isOpen}/>
+            <Logo />
+            <MenuToggle toggle={toggle} isOpen={isOpen} />
+            <MenuLinks isOpen={isOpen} />
         </NavBarContainer>
     );
 };
