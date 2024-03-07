@@ -1,15 +1,22 @@
 import React from 'react';
-import { Flex, Heading, Text } from '@chakra-ui/react';
+import { Flex, Heading, List } from '@chakra-ui/react';
+import ContactForm from '../components/contact/ContactForm';
 
 const Contact: React.FC = () => {
     return (
-        <Flex w='100%' flexDirection='column' textAlign='center'>
-            <Heading>
-                📫 Don't hesitate, text me on samuel.vitek@email.cz
-            </Heading>
-            <Text>
-                🔜 Contact form soon to be added 🔜
-            </Text>
+        <Flex w='100%' justifyContent='space-between'>
+            <List w='42%' spacing='5'>
+                <Heading>
+                    🤔 Do you have a question?
+                </Heading>
+                <Heading>
+                    💬 Just want to chat?
+                </Heading>
+                <Heading>
+                    📫 In any case, send it!
+                </Heading>
+            </List>
+            <ContactForm />
         </Flex>
     );
 };

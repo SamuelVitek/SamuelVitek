@@ -20,7 +20,7 @@ const MenuLinks: React.FC<{ isOpen: boolean }> = ({ isOpen }) => {
                 direction={['column', 'row', 'row', 'row']}
             >
                 <MenuItem to='/' isLast>
-                    <FontAwesomeIcon icon={faHouse}/>
+                    <FontAwesomeIcon icon={faHouse} />
                 </MenuItem>
                 <MenuItem to='/about'>About me</MenuItem>
                 <MenuItem to='/work'>Work Experience</MenuItem>
@@ -41,7 +41,7 @@ const MenuLinks: React.FC<{ isOpen: boolean }> = ({ isOpen }) => {
                         }}
                     >
                         <Text me={1}>Contact me</Text>
-                        <FontAwesomeIcon icon={faPaperPlane}/>
+                        <FontAwesomeIcon icon={faPaperPlane} />
                     </Button>
                 </MenuItem>
             </Stack>

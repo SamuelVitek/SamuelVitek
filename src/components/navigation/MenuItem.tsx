@@ -13,7 +13,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ children, isLast, setActive, to, ..
 
     useEffect(() => {
         setActivePath(window.location.pathname)
-    }, [window.location.pathname]);
+    }, []);
 
     return (
         <Link
