@@ -7,13 +7,14 @@ const ControllerInput: React.FC<{ attribute: string, placeholder: string }> = ({
 
     return (
         <>
-            {attribute === 'text' ? (
+            {attribute === 'message' ? (
                 <Controller
                     name={attribute}
                     control={control}
                     rules={{ required: true }}
                     render={({ field }) => (
                         <Textarea
+                            mb='5'
                             focusBorderColor={errors[attribute] ? 'red.300' : 'cyan.400'}
                             placeholder={placeholder}
                             {...field}
@@ -27,6 +28,7 @@ const ControllerInput: React.FC<{ attribute: string, placeholder: string }> = ({
                     rules={{ required: true }}
                     render={({ field }) => (
                         <Input
+                            mb='3'
                             type={attribute === 'email' ? 'email' : 'text'}
                             focusBorderColor={errors[attribute] ? 'red.300' : 'cyan.400'}
                             placeholder={placeholder}

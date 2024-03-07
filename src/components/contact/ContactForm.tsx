@@ -2,12 +2,13 @@ import React from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { Button, Flex } from '@chakra-ui/react';
 import ControllerInput from './ControllerInput';
+import { api } from '../../service/api';
 
 interface IFormInput {
     fullName: string;
     email: string;
     subject: string;
-    text: string;
+    message: string;
 }
 
 const ContactForm: React.FC = () => {
@@ -25,7 +26,7 @@ const ContactForm: React.FC = () => {
             placeholder: 'Here goes the subject'
         },
         {
-            attribute: 'text',
+            attribute: 'message',
             placeholder: 'And finally for your message/question'
         },
     ]
@@ -36,14 +37,33 @@ const ContactForm: React.FC = () => {
             fullName: '',
             email: '',
             subject: '',
-            text: ''
+            message: ''
         }
     });
 
     const { handleSubmit } = form;
 
-    const onSubmit = (data: IFormInput) => {
-        console.log(data)
+    const onSubmit = async (data: IFormInput) => {
+        const emailToSend = {
+            'From': 'info@cloudypages.cz',
+            'To': 'contact@samuelvitek.com',
+            'TemplateAlias': 'to-me',
+            'TemplateModel': {
+                'full_name': data.fullName,
+                'from_email': data.email,
+                'message': data.message,
+                'year': new Date().getFullYear(),
+                'subject': data.subject
+            }
+        }
+
+        console.log(emailToSend)
+        try {
+            await api.post(`https://api.postmarkapp.com/email/withTemplate`, emailToSend)
+        } catch (e) {
+            console.log('ERROR', e)
+            console.error('ERROR', e)
+        }
     };
 
     return (
