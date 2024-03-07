@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import {
     Button,
@@ -16,7 +16,6 @@ import { api } from '../../service/api';
 interface IFormInput {
     fullName: string;
     email: string;
-    subject: string;
     message: string;
 }
 
@@ -35,10 +34,6 @@ const ContactForm: React.FC = () => {
             attribute: 'email',
             placeholder: 'Email as well please'
         },
-        // {
-        //     attribute: 'subject',
-        //     placeholder: 'Here goes the subject'
-        // },
         {
             attribute: 'message',
             placeholder: 'And finally for your message/question'
@@ -50,7 +45,6 @@ const ContactForm: React.FC = () => {
         defaultValues: {
             fullName: '',
             email: '',
-            subject: '',
             message: ''
         }
     });
@@ -62,10 +56,10 @@ const ContactForm: React.FC = () => {
         setIsLoading(true);
 
         const emailToMe = {
-            "service_id": "sams_portfolio_web",
-            "template_id": "to_sam_templ",
-            "user_id": "I4YKvA2AG2tpV3pmg",
-            "template_params": {
+            'service_id': 'sam_portfolio_web',
+            'template_id': 'to_sam_template',
+            'user_id': 'I4YKvA2AG2tpV3pmg',
+            'template_params': {
                 'full_name': data.fullName,
                 'from_email': data.email,
                 'message': data.message,
@@ -73,10 +67,10 @@ const ContactForm: React.FC = () => {
         }
 
         const emailToUser = {
-            "service_id": "sams_portfolio_web",
-            "template_id": "verification_template",
-            "user_id": "I4YKvA2AG2tpV3pmg",
-            "template_params": {
+            'service_id': 'sam_portfolio_web',
+            'template_id': 'verification_template',
+            'user_id': 'I4YKvA2AG2tpV3pmg',
+            'template_params': {
                 'full_name': data.fullName,
                 'from_email': data.email,
                 'message': data.message,
@@ -85,23 +79,32 @@ const ContactForm: React.FC = () => {
 
         try {
             await api.post(`https://api.emailjs.com/api/v1.0/email/send`, emailToMe);
-            await api.post(`https://api.emailjs.com/api/v1.0/email/send`, emailToUser);
 
             toast({
                 title: 'Success!',
                 description: 'Email has been sent 🎉🎉🎉',
                 status: 'success',
                 duration: 3000
-            })
+            });
         } catch (e) {
             console.log('ERROR', e)
             console.error('ERROR', e)
         } finally {
             onClose();
             setIsLoading(false);
+            await sentVerification(emailToUser);
             reset();
         }
     };
+
+    const sentVerification = async (emailToUser: any) => {
+        try {
+            await api.post(`https://api.emailjs.com/api/v1.0/email/send`, emailToUser);
+        } catch (e) {
+            console.log('ERROR', e)
+            console.error('ERROR', e)
+        }
+    }
 
     return (
         <Flex w='54%'>
@@ -117,8 +120,18 @@ const ContactForm: React.FC = () => {
                     <Button
                         isLoading={isLoading}
                         type='submit'
+                        size='md'
+                        rounded='md'
+                        border='1px solid'
+                        borderColor='cyan.400'
+                        color='cyan.400'
+                        h='2.5em'
+                        bg=''
+                        _hover={{
+                            bg: 'whiteAlpha.200'
+                        }}
                     >
-                        Send
+                        Send the Email 📤
                     </Button>
                 </FormProvider>
             </form>

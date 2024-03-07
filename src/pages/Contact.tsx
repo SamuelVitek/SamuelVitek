@@ -5,7 +5,7 @@ import ContactForm from '../components/contact/ContactForm';
 const Contact: React.FC = () => {
     return (
         <Flex w='100%' justifyContent='space-between'>
-            <List w='42%' spacing='5'>
+            <List w='42%' spacing='8'>
                 <Heading>
                     🤔 Do you have a question?
                 </Heading>
