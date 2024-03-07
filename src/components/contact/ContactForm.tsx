@@ -19,6 +19,8 @@ interface IFormInput {
     message: string;
 }
 
+//TODO add checkbox for terms of use and privacy policy
+//TODO Api key to .env
 const ContactForm: React.FC = () => {
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -90,10 +92,10 @@ const ContactForm: React.FC = () => {
             console.log('ERROR', e)
             console.error('ERROR', e)
         } finally {
+            reset();
             onClose();
             setIsLoading(false);
             await sentVerification(emailToUser);
-            reset();
         }
     };
 
@@ -146,9 +148,11 @@ const ContactForm: React.FC = () => {
                     justifyContent='center'
                     alignItems='center'
                     borderRadius='20px'
-                    bg='linear-gradient(rgb(2, 41, 79), rgb(9, 14, 16))'
+                    bg='#031c36'
                 >
-                    <ModalHeader>I am really sorry but this will take a couple of seconds 🥲🥲🥲</ModalHeader>
+                    <ModalHeader textAlign='center'>
+                        I am really sorry but this will take a couple of seconds 🥲🥲🥲
+                    </ModalHeader>
                     <ModalFooter>
                         <CircularProgress isIndeterminate color='cyan.400' />
                     </ModalFooter>
