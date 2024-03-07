@@ -1,5 +1,6 @@
 import React from 'react';
-import { Flex, Heading, Text } from '@chakra-ui/react';
+import { Flex, Heading } from '@chakra-ui/react';
+import ContactForm from "../components/contact/ContactForm";
 
 const Contact: React.FC = () => {
     return (
@@ -7,9 +8,7 @@ const Contact: React.FC = () => {
             <Heading>
                 📫 Don't hesitate, text me on samuel.vitek@email.cz
             </Heading>
-            <Text>
-                🔜 Contact form soon to be added 🔜
-            </Text>
+            <ContactForm />
         </Flex>
     );
 };
