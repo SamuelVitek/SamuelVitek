@@ -56,12 +56,12 @@ const Introduction: React.FC = () => {
                     <Box as='span' color='cyan.400' me='2'>
                         More about me
                     </Box>
-                    <FontAwesomeIcon icon={faArrowRight}/>
+                    <FontAwesomeIcon icon={faArrowRight} />
                 </Button>
             </Flex>
             <Flex mt='8' ms='3' w='10%' justifyContent='space-between'>
                 {socials.map(social => (
-                    <Socials social={social} key={social.name}/>
+                    <Socials social={social} key={social.name} />
                 ))}
             </Flex>
         </Flex>
