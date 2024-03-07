@@ -1,6 +1,6 @@
 import React from 'react';
-import { Input, Textarea } from "@chakra-ui/react";
-import { Controller, useFormContext } from "react-hook-form";
+import { Input, Textarea } from '@chakra-ui/react';
+import { Controller, useFormContext } from 'react-hook-form';
 
 const ControllerInput: React.FC<{ attribute: string, placeholder: string }> = ({ attribute, placeholder }) => {
     const { formState: { errors }, control } = useFormContext();
@@ -20,7 +20,7 @@ const ControllerInput: React.FC<{ attribute: string, placeholder: string }> = ({
                         />
                     )}
                 />
-                ) : (
+            ) : (
                 <Controller
                     name={attribute}
                     control={control}

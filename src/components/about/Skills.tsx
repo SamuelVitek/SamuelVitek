@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, Flex, GridItem, Heading, SimpleGrid } from '@chakra-ui/react';
 import { langs } from '../../data/Others';
 import Language from './Language';
-import TechStack from "./TechStack";
+import TechStack from './TechStack';
 
 const Skills: React.FC = () => {
     return (
@@ -12,7 +12,7 @@ const Skills: React.FC = () => {
                 <Text color='whiteAlpha.600' fontSize='lg' mb='10'>
                     I can use these following technologies
                 </Text>
-                <TechStack/>
+                <TechStack />
             </Flex>
             <SimpleGrid columns={3} spacingX='20' spacingY='10'>
                 <GridItem colSpan={3}>

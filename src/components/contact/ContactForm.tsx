@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
-import { Button } from '@chakra-ui/react';
+import { Button, Flex } from '@chakra-ui/react';
 import ControllerInput from './ControllerInput';
 
 interface IFormInput {
@@ -47,20 +47,22 @@ const ContactForm: React.FC = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <FormProvider {...form}>
-                {formValues.map(({ attribute, placeholder }) => (
-                    <ControllerInput
-                        key={attribute}
-                        attribute={attribute}
-                        placeholder={placeholder}
-                    />
-                ))}
-                <Button type='submit'>
-                    Send
-                </Button>
-            </FormProvider>
-        </form>
+        <Flex w='54%'>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <FormProvider {...form}>
+                    {formValues.map(({ attribute, placeholder }) => (
+                        <ControllerInput
+                            key={attribute}
+                            attribute={attribute}
+                            placeholder={placeholder}
+                        />
+                    ))}
+                    <Button type='submit'>
+                        Send
+                    </Button>
+                </FormProvider>
+            </form>
+        </Flex>
     );
 };
 
