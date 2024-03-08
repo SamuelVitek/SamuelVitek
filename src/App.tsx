@@ -23,7 +23,7 @@ function App() {
                 <div className='App-body'>
                     <Flex
                         w='75%'
-                        mt={{ base: '15vh', xl: '30vh' }}
+                        mt={{ base: '15vh', md: '20vh', xl: '30vh' }}
                     >
                         <Routes>
                             <Route path='/' element={<Home />} />
