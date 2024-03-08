@@ -43,7 +43,7 @@ const Introduction: React.FC = () => {
                     alt="Sam's mugshot"
                     borderRadius='full'
                     fit='cover'
-                    boxSize={{ lg: '6em', xl: '10em'}}
+                    boxSize={{ base: '8em', xl: '10em'}}
                 />
             </Flex>
             <Flex>
