@@ -96,9 +96,14 @@ const TechStack: React.FC = () => {
                             </Heading>
                             <HStack spacing='5'>
                                 {stack.stack.map((icon, key) => (
-                                    <Tooltip label={stack.stackLabels[key]} hasArrow color='white' bg='cyan.400'
-                                             fontWeight='600'
-                                             key={key}>
+                                    <Tooltip
+                                        label={stack.stackLabels[key]}
+                                        hasArrow
+                                        color='white'
+                                        bg='cyan.400'
+                                        fontWeight='600'
+                                        key={key}
+                                    >
                                         <Box as='span' key={key}>
                                             {icon}
                                         </Box>

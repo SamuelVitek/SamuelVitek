@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import {
+    Box,
     Button, Checkbox,
     CircularProgress,
-    Flex,
+    Flex, Icon,
     Modal, ModalContent, ModalFooter,
     ModalHeader,
-    ModalOverlay,
+    ModalOverlay, Tooltip,
     useDisclosure,
     useToast
 } from '@chakra-ui/react';
+import { MdOutlineInfo } from "react-icons/md";
 import ControllerInput from './ControllerInput';
 import { api } from '../../service/api';
 
@@ -46,6 +48,10 @@ const ContactForm: React.FC = () => {
             placeholder: 'And finally for your message/question'
         },
     ]
+
+    const privacyPolicy = 'The data you provide (name, email & message) is used to send a message to my email. ' +
+        'You give me the consent to reply to you based on the information you provide in the form above. ' +
+        'The data will be stored only for the purpose of the communication between us.'
 
     const form = useForm<IFormInput>({
         mode: 'onChange',
@@ -143,12 +149,27 @@ const ContactForm: React.FC = () => {
                         />
                     ))}
                     <Flex flexDirection='column'>
-                        <Checkbox
-                            isInvalid={isInvalid}
-                            onChange={handleOnClick}
-                        >
-                            I agree to the Terms of Service and Privacy Policy.
-                        </Checkbox>
+                        <Flex>
+                            <Checkbox
+                                me='1'
+                                isInvalid={isInvalid}
+                                onChange={handleOnClick}
+                            >
+                                I agree to the Terms of Service and Privacy Policy.
+                            </Checkbox>
+                            <Tooltip
+                                label={privacyPolicy}
+                                // placement='right'
+                                hasArrow
+                                // color='white'
+                                // bg='cyan.400'
+                                fontWeight='600'
+                            >
+                                <Box as='span'>
+                                    <Icon as={MdOutlineInfo}  fontSize='xl' />
+                                </Box>
+                            </Tooltip>
+                        </Flex>
                         <Button
                             isLoading={isLoading}
                             w='min'
