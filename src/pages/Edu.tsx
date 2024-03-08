@@ -8,7 +8,7 @@ const Edu: React.FC = () => {
             <Heading mb='10'>
                 My work education on a timeline 🎓
             </Heading>
-            <Timeline/>
+            <Timeline />
         </Flex>
     );
 };

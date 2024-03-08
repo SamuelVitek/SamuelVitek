@@ -1,7 +1,10 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Flex, Heading, Image, Tag, Text } from '@chakra-ui/react';
-import { faBriefcase, faLocationDot, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import '../../App.css';
+import { FaBriefcase } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
+import { RiGraduationCapFill } from "react-icons/ri";
+import { Flex, Heading, Icon, Image, Tag, Text } from '@chakra-ui/react';
+
 import { Data } from '../../data/Types';
 import { VerticalTimelineElement } from 'react-vertical-timeline-component';
 
@@ -16,7 +19,7 @@ const TimelineElement: React.FC<PropsType> = ({ props, isWork }) => {
 
     return (
         <VerticalTimelineElement
-            className='vertical-timeline-element--work'
+            dateClassName='timeline-date'
             contentStyle={{
                 background: bgColor,
                 color: '#fff',
@@ -28,25 +31,52 @@ const TimelineElement: React.FC<PropsType> = ({ props, isWork }) => {
             contentArrowStyle={{ borderRight: '10px solid ' + bgColor }}
             date={props.date}
             iconStyle={{ background: bgColor, color: '#fff' }}
-            icon={<FontAwesomeIcon icon={isWork ? faBriefcase : faGraduationCap}/>}
+            icon={<Icon as={isWork ? FaBriefcase : RiGraduationCapFill} />}
         >
             <Flex>
-                <Flex w='80%' flexDirection='column'>
-                    <Heading style={{ color: 'white' }}>{props.title}</Heading>
+                <Flex w={{ base: '100%', sm: '80%' }} flexDirection='column'>
+                    <Heading
+                        fontSize={{ base: 'md', sm: 'xl', md: '2xl' }}
+                        mb='2'
+                        style={{ color: 'white' }}
+                    >
+                        {props.title}
+                    </Heading>
                     <Text style={{ margin: '0' }}>
-                        <FontAwesomeIcon icon={isWork ? faBriefcase : faGraduationCap}/> {props.company}
+                        <Icon
+                            as={isWork ? FaBriefcase : RiGraduationCapFill}
+                            fontSize={{ base: '2xs', sm: 'xs', md: 'sm' }}
+                            me='1'
+                        />
+                        {props.company}
                     </Text>
-                    <Text style={{ margin: '0 0 2.25em 0' }}>
-                        <FontAwesomeIcon icon={faLocationDot}/> {props.location}
+                    <Text
+                        style={{ margin: '0 0 2.25em 0' }}
+                    >
+                        <Icon as={FaLocationDot} me='1' ms='-2px' />
+                        {props.location}
                     </Text>
                 </Flex>
-                <Flex>
-                    <Image src={process.env.PUBLIC_URL + props.logo} fit='cover' alt='Logo' w='3.125em' h='3.125em'
-                           borderRadius='full'/>
+                <Flex
+                    display={{ base: 'none', sm: 'flex' }}
+                >
+                    <Image
+                        src={props.logo}
+                        fit='cover'
+                        alt='Logo'
+                        boxSize={{ sm: '2.5em', xl: '3em' }}
+                        borderRadius='full'
+                    />
                 </Flex>
             </Flex>
             {props.skills.map((skill, index) => (
-                <Tag me='2' key={index + '_' + skill}>{skill}</Tag>
+                <Tag
+                    me='2'
+                    size={{ base: 'sm', sm: 'md' }}
+                    key={index + '_' + skill}
+                >
+                    {skill}
+                </Tag>
             ))}
         </VerticalTimelineElement>
     );
