@@ -7,9 +7,20 @@ import Socials from './Socials';
 
 const Introduction: React.FC = () => {
     return (
-        <Flex flexDirection='column' textAlign='left'>
-            <Flex alignItems='center'>
-                <Flex flexDirection='column' pe='50px'>
+        <Flex
+            flexDirection='column'
+            alignItems={{ base: 'center', xl: 'start' }}
+            textAlign='left'
+        >
+            <Flex
+                alignItems='center'
+                flexDirection={{ base: 'column', xl: 'row' }}
+            >
+                <Flex
+                    flexDirection='column'
+                    pe={{ xl: '50px' }}
+                    mb={{ base: '50px', xl: '0' }}
+                >
                     <Heading fontWeight='600' mb='2'>
                         Hello, Samuel Vítek here 👋👋👋
                     </Heading>
@@ -32,12 +43,12 @@ const Introduction: React.FC = () => {
                     alt="Sam's mugshot"
                     borderRadius='full'
                     fit='cover'
-                    boxSize='10em'
+                    boxSize={{ lg: '6em', xl: '10em'}}
                 />
             </Flex>
             <Flex>
                 <Button
-                    mt='5'
+                    mt={{ base: '10', xl: '5' }}
                     h='2.5em'
                     size='sm'
                     as={Link}
@@ -59,7 +70,12 @@ const Introduction: React.FC = () => {
                     <FontAwesomeIcon icon={faArrowRight} />
                 </Button>
             </Flex>
-            <Flex mt='8' ms='3' w='10%' justifyContent='space-between'>
+            <Flex
+                mt='8'
+                ms='3'
+                w={{ base: '15%', xl: '10%' }}
+                justifyContent='space-between'
+            >
                 {socials.map(social => (
                     <Socials social={social} key={social.name} />
                 ))}

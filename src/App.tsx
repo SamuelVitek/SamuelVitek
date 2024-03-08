@@ -14,11 +14,17 @@ import Contact from './pages/Contact';
 
 function App() {
     return (
-        <div className='App'>
+        <Flex
+            className='App'
+            minH='100vh'
+        >
             <ChakraProvider theme={theme}>
                 <Nav />
                 <div className='App-body'>
-                    <Flex w='75%' mt='30vh'>
+                    <Flex
+                        w='75%'
+                        mt={{ lg: '15vh', xl: '30vh' }}
+                    >
                         <Routes>
                             <Route path='/' element={<Home />} />
                             <Route path='/about' element={<About />} />
@@ -32,7 +38,7 @@ function App() {
                     <SpeedInsights />
                 </div>
             </ChakraProvider>
-        </div>
+        </Flex>
     );
 }
 
