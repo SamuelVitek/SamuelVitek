@@ -5,8 +5,6 @@ import { Box, Button, Text, Stack } from '@chakra-ui/react';
 import { faHouse, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 const MenuLinks: React.FC<{ isOpen: boolean }> = ({ isOpen }) => {
-
-
     return (
         <Box
             display={{ base: isOpen ? 'block' : 'none', md: 'block' }}
@@ -16,8 +14,8 @@ const MenuLinks: React.FC<{ isOpen: boolean }> = ({ isOpen }) => {
             <Stack
                 spacing={{ base: '5', lg: '8'}}
                 align='center'
-                justify={['center', 'space-between', 'flex-end', 'flex-end']}
-                direction={['column', 'row', 'row', 'row']}
+                justify={['center', 'center', 'flex-end', 'flex-end']}
+                direction={['column', 'column', 'row', 'row']}
             >
                 <MenuItem to='/' isLast>
                     <FontAwesomeIcon icon={faHouse} />
