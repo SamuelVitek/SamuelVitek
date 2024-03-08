@@ -15,6 +15,7 @@ const NavBarContainer: React.FC<{ children: ReactNode, isOpen: boolean }> = ({ c
             w='100%'
             p={8}
             background={{base: isOpen ? color : '', md: ''}}
+            zIndex='9999'
             color={'white'}
         >
             {children}
