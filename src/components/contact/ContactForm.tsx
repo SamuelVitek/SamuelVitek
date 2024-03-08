@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import {
-    Button,
+    Button, Checkbox,
     CircularProgress,
     Flex,
     Modal, ModalContent, ModalFooter,
@@ -17,12 +17,17 @@ interface IFormInput {
     fullName: string;
     email: string;
     message: string;
+    policies: boolean;
 }
 
-//TODO add checkbox for terms of use and privacy policy
-//TODO Api key to .env
+//TODO error management
+//TODO think about partitioning it to smaller components, it's long an ugly
+//TODO find a better state management that this
 const ContactForm: React.FC = () => {
     const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [isInvalid, setIsInvalid] = useState<boolean>(false);
+    const [isChecked, setIsChecked] = useState<boolean>(false);
+
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     const toast = useToast();
@@ -47,62 +52,68 @@ const ContactForm: React.FC = () => {
         defaultValues: {
             fullName: '',
             email: '',
-            message: ''
+            message: '',
+            policies: false
         }
     });
 
     const { handleSubmit, reset } = form;
 
     const onSubmit = async (data: IFormInput) => {
-        onOpen();
-        setIsLoading(true);
+        if (!isChecked) {
+            setIsInvalid(true);
+        } else {
+            onOpen();
+            setIsLoading(true);
 
-        const emailToMe = {
-            'service_id': process.env.REACT_APP_MAILJS_SERVER,
-            'template_id': process.env.REACT_APP_TO_ME_TEMPLATE,
-            'user_id': process.env.REACT_APP_MAILJS_API_KEY,
-            'template_params': {
-                'full_name': data.fullName,
-                'from_email': data.email,
-                'message': data.message,
+            const emailToMe = {
+                'service_id': process.env.REACT_APP_MAILJS_SERVER,
+                'template_id': process.env.REACT_APP_TO_ME_TEMPLATE,
+                'user_id': process.env.REACT_APP_MAILJS_API_KEY,
+                'template_params': {
+                    'full_name': data.fullName,
+                    'from_email': data.email,
+                    'message': data.message,
+                }
             }
-        }
 
-        const emailToUser = {
-            'service_id': process.env.REACT_APP_MAILJS_SERVER,
-            'template_id': process.env.REACT_APP_USER_TEMPLATE,
-            'user_id': process.env.REACT_APP_MAILJS_API_KEY,
-            'template_params': {
-                'full_name': data.fullName,
-                'from_email': data.email,
-                'message': data.message,
+            const emailToUser = {
+                'service_id': process.env.REACT_APP_MAILJS_SERVER,
+                'template_id': process.env.REACT_APP_USER_TEMPLATE,
+                'user_id': process.env.REACT_APP_MAILJS_API_KEY,
+                'template_params': {
+                    'full_name': data.fullName,
+                    'from_email': data.email,
+                    'message': data.message,
+                }
             }
-        }
 
-        try {
-            await api.post(`https://api.emailjs.com/api/v1.0/email/send`, emailToMe);
+            try {
+                await api.post(`https://api.emailjs.com/api/v1.0/email/send`, emailToMe);
 
-            toast({
-                title: 'Success!',
-                description: 'Email has been sent 🎉🎉🎉',
-                status: 'success',
-                duration: 3000
-            });
-        } catch (e) {
-            console.log('ERROR', e)
-            console.error('ERROR', e)
+                toast({
+                    title: 'Success!',
+                    description: 'Email has been sent 🎉🎉🎉',
+                    status: 'success',
+                    duration: 3000
+                });
+            } catch (e) {
+                console.log('ERROR', e)
+                console.error('ERROR', e)
 
-            toast({
-                title: 'Error',
-                description: 'Oh maaan, it didn\'t work this time 😭',
-                status: 'error',
-                duration: 3000
-            });
-        } finally {
-            reset();
-            onClose();
-            setIsLoading(false);
-            await sentVerification(emailToUser);
+                toast({
+                    title: 'Error',
+                    description: 'Oh maaan, it didn\'t work this time 😭',
+                    status: 'error',
+                    duration: 3000
+                });
+            } finally {
+                reset();
+                onClose();
+                setIsLoading(false);
+                setIsChecked(false);
+                await sentVerification(emailToUser);
+            }
         }
     };
 
@@ -113,6 +124,11 @@ const ContactForm: React.FC = () => {
             console.log('ERROR', e)
             console.error('ERROR', e)
         }
+    }
+
+    const handleOnClick = () => {
+        setIsInvalid(invalid => invalid && !invalid);
+        setIsChecked(check => !check);
     }
 
     return (
@@ -126,22 +142,32 @@ const ContactForm: React.FC = () => {
                             placeholder={placeholder}
                         />
                     ))}
-                    <Button
-                        isLoading={isLoading}
-                        type='submit'
-                        size='md'
-                        rounded='md'
-                        border='1px solid'
-                        borderColor='cyan.400'
-                        color='cyan.400'
-                        h='2.5em'
-                        bg=''
-                        _hover={{
-                            bg: 'whiteAlpha.200'
-                        }}
-                    >
-                        Send the Email 📤
-                    </Button>
+                    <Flex flexDirection='column'>
+                        <Checkbox
+                            isInvalid={isInvalid}
+                            onChange={handleOnClick}
+                        >
+                            I agree to the Terms of Service and Privacy Policy.
+                        </Checkbox>
+                        <Button
+                            isLoading={isLoading}
+                            w='min'
+                            mt='4'
+                            type='submit'
+                            size='md'
+                            rounded='md'
+                            border='1px solid'
+                            borderColor='cyan.400'
+                            color='cyan.400'
+                            h='2.5em'
+                            bg=''
+                            _hover={{
+                                bg: 'whiteAlpha.200'
+                            }}
+                        >
+                            Send the Email 📤
+                        </Button>
+                    </Flex>
                 </FormProvider>
             </form>
             <Modal
@@ -157,7 +183,7 @@ const ContactForm: React.FC = () => {
                     borderRadius='20px'
                     bg='#031c36'
                 >
-                    <ModalHeader textAlign='center'>
+                    <ModalHeader textAlign='center' color='white'>
                         I am really sorry but this will take a couple of seconds 🥲
                     </ModalHeader>
                     <ModalFooter>
