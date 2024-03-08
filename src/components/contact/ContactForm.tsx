@@ -117,7 +117,7 @@ const ContactForm: React.FC = () => {
                 reset();
                 onClose();
                 setIsLoading(false);
-                setIsChecked(false);
+                // setIsChecked(false);
                 await sentVerification(emailToUser);
             }
         }
@@ -159,10 +159,7 @@ const ContactForm: React.FC = () => {
                             </Checkbox>
                             <Tooltip
                                 label={privacyPolicy}
-                                // placement='right'
                                 hasArrow
-                                // color='white'
-                                // bg='cyan.400'
                                 fontWeight='600'
                             >
                                 <Box as='span'>
