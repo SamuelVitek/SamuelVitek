@@ -21,10 +21,17 @@ const Introduction: React.FC = () => {
                     pe={{ xl: '50px' }}
                     mb={{ base: '50px', xl: '0' }}
                 >
-                    <Heading fontWeight='600' mb='2'>
+                    <Heading
+                        fontWeight='600'
+                        fontSize={{ base: 'lg', sm: '2xl' }}
+                        mb={{ base: '5', sm: '2' }}
+                    >
                         Hello, Samuel Vítek here 👋👋👋
                     </Heading>
-                    <Text fontSize='2xl' fontWeight='500'>
+                    <Text
+                        fontSize={{ base: 'md', sm: '2xl' }}
+                        fontWeight='500'
+                    >
                         I am a student who became a {'\n'}
                         <Box as='span' color='cyan.400'>
                             Software Developer {'\n'}
@@ -43,12 +50,12 @@ const Introduction: React.FC = () => {
                     alt="Sam's mugshot"
                     borderRadius='full'
                     fit='cover'
-                    boxSize={{ base: '8em', xl: '10em'}}
+                    boxSize={{ base: '5em', sm: '8em', xl: '10em'}}
                 />
             </Flex>
             <Flex>
                 <Button
-                    mt={{ base: '10', xl: '5' }}
+                    mt={{ base: '5', sm: '10', xl: '5' }}
                     h='2.5em'
                     size='sm'
                     as={Link}
@@ -71,9 +78,9 @@ const Introduction: React.FC = () => {
                 </Button>
             </Flex>
             <Flex
-                mt='8'
+                mt={{ base: '8', sm: '8' }}
                 ms='3'
-                w={{ base: '15%', xl: '10%' }}
+                w={{ base: '30%', sm: '15%' , xl: '10%' }}
                 justifyContent='space-between'
             >
                 {socials.map(social => (
