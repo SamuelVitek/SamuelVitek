@@ -1,5 +1,4 @@
 .App-body {
-    min-height: 100vh;
     background: linear-gradient(rgb(2, 41, 79), rgb(9, 14, 16));
     display: flex;
     flex-direction: column;

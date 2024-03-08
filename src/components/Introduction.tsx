@@ -7,13 +7,31 @@ import Socials from './Socials';
 
 const Introduction: React.FC = () => {
     return (
-        <Flex flexDirection='column' textAlign='left'>
-            <Flex alignItems='center'>
-                <Flex flexDirection='column' pe='50px'>
-                    <Heading fontWeight='600' mb='2'>
+        <Flex
+            flexDirection='column'
+            alignItems={{ base: 'center', xl: 'start' }}
+            textAlign='left'
+        >
+            <Flex
+                alignItems='center'
+                flexDirection={{ base: 'column', xl: 'row' }}
+            >
+                <Flex
+                    flexDirection='column'
+                    pe={{ xl: '50px' }}
+                    mb={{ base: '50px', xl: '0' }}
+                >
+                    <Heading
+                        fontWeight='600'
+                        fontSize={{ base: 'lg', sm: 'xl', md: '2xl' }}
+                        mb={{ base: '5', md: '2' }}
+                    >
                         Hello, Samuel Vítek here 👋👋👋
                     </Heading>
-                    <Text fontSize='2xl' fontWeight='500'>
+                    <Text
+                        fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
+                        fontWeight='500'
+                    >
                         I am a student who became a {'\n'}
                         <Box as='span' color='cyan.400'>
                             Software Developer {'\n'}
@@ -32,12 +50,12 @@ const Introduction: React.FC = () => {
                     alt="Sam's mugshot"
                     borderRadius='full'
                     fit='cover'
-                    boxSize='10em'
+                    boxSize={{ base: '5em', sm: '6em', xl: '10em'}}
                 />
             </Flex>
             <Flex>
                 <Button
-                    mt='5'
+                    mt={{ base: '5', md: '10', xl: '5' }}
                     h='2.5em'
                     size='sm'
                     as={Link}
@@ -59,7 +77,12 @@ const Introduction: React.FC = () => {
                     <FontAwesomeIcon icon={faArrowRight} />
                 </Button>
             </Flex>
-            <Flex mt='8' ms='3' w='10%' justifyContent='space-between'>
+            <Flex
+                mt={{ base: '8', sm: '8' }}
+                ms='3'
+                w={{ base: '30%', md: '20%' , xl: '10%' }}
+                justifyContent='space-between'
+            >
                 {socials.map(social => (
                     <Socials social={social} key={social.name} />
                 ))}

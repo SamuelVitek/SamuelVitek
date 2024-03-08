@@ -10,7 +10,9 @@ const Nav: React.FC = () => {
     const toggle = () => setIsOpen(!isOpen);
 
     return (
-        <NavBarContainer>
+        <NavBarContainer
+            isOpen={isOpen}
+        >
             <Logo />
             <MenuToggle toggle={toggle} isOpen={isOpen} />
             <MenuLinks isOpen={isOpen} />
