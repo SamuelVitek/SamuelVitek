@@ -58,9 +58,9 @@ const ContactForm: React.FC = () => {
         setIsLoading(true);
 
         const emailToMe = {
-            'service_id': 'sam_portfolio_web',
-            'template_id': 'to_sam_template',
-            'user_id': 'I4YKvA2AG2tpV3pmg',
+            'service_id': process.env.REACT_APP_MAILJS_SERVER,
+            'template_id': process.env.REACT_APP_TO_ME_TEMPLATE,
+            'user_id': process.env.REACT_APP_MAILJS_API_KEY,
             'template_params': {
                 'full_name': data.fullName,
                 'from_email': data.email,
@@ -69,9 +69,9 @@ const ContactForm: React.FC = () => {
         }
 
         const emailToUser = {
-            'service_id': 'sam_portfolio_web',
-            'template_id': 'verification_template',
-            'user_id': 'I4YKvA2AG2tpV3pmg',
+            'service_id': process.env.REACT_APP_MAILJS_SERVER,
+            'template_id': process.env.REACT_APP_USER_TEMPLATE,
+            'user_id': process.env.REACT_APP_MAILJS_API_KEY,
             'template_params': {
                 'full_name': data.fullName,
                 'from_email': data.email,
@@ -91,6 +91,13 @@ const ContactForm: React.FC = () => {
         } catch (e) {
             console.log('ERROR', e)
             console.error('ERROR', e)
+
+            toast({
+                title: 'Error',
+                description: 'Oh maaan, it didn\'t work this time 😭',
+                status: 'error',
+                duration: 3000
+            });
         } finally {
             reset();
             onClose();
@@ -151,7 +158,7 @@ const ContactForm: React.FC = () => {
                     bg='#031c36'
                 >
                     <ModalHeader textAlign='center'>
-                        I am really sorry but this will take a couple of seconds 🥲🥲🥲
+                        I am really sorry but this will take a couple of seconds 🥲
                     </ModalHeader>
                     <ModalFooter>
                         <CircularProgress isIndeterminate color='cyan.400' />
