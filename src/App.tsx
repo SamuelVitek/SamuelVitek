@@ -20,7 +20,10 @@ function App() {
         >
             <ChakraProvider theme={theme}>
                 <Nav />
-                <div className='App-body'>
+                <Flex
+                    className='App-body'
+                    w='100%'
+                >
                     <Flex
                         w='75%'
                         mt={{ base: '15vh', md: '20vh', xl: '30vh' }}
@@ -36,7 +39,7 @@ function App() {
                     </Flex>
                     <Analytics />
                     <SpeedInsights />
-                </div>
+                </Flex>
             </ChakraProvider>
         </Flex>
     );
