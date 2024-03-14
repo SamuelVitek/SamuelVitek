@@ -89,12 +89,12 @@ const TechStack: React.FC = () => {
         <Flex>
             <VStack align='start'>
                 {TechStack.map((stack, index) => (
-                    <>
-                        <Box>
-                            <Heading fontSize='2xl' fontWeight='500' mb='3'>
+                    <Box w='100%' key={'0' + index}>
+                        <Box key={index}>
+                            <Heading fontSize='2xl' fontWeight='500' mb='3' key={stack.label}>
                                 {stack.label}
                             </Heading>
-                            <HStack spacing='5'>
+                            <HStack spacing='5' key={stack.label + index}>
                                 {stack.stack.map((icon, key) => (
                                     <Tooltip
                                         label={stack.stackLabels[key]}
@@ -116,7 +116,7 @@ const TechStack: React.FC = () => {
                             mb='2'
                             display={(index + 1) === TechStack.length ? 'none' : 'flex'}
                         />
-                    </>
+                    </Box>
                 ))}
             </VStack>
         </Flex>
