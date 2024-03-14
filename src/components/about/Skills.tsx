@@ -6,18 +6,24 @@ import TechStack from './TechStack';
 
 const Skills: React.FC = () => {
     return (
-        <Flex justifyContent='space-between' mb='10vh'>
+        <Flex
+            flexDirection={{ base: 'column', md: 'row' }}
+            justifyContent={{ base: 'center', lg: 'space-between' }}
+            alignItems={{ base: 'center', lg: '' }}
+            gap={{ base: '10', lg: '0' }}
+            mb='10vh'
+        >
             <Flex flexDirection='column'>
-                <Heading>My Tech-Stack</Heading>
-                <Text color='whiteAlpha.600' fontSize='lg' mb='10'>
+                <Heading fontSize={{ base: 'xl', lg: '3xl' }}>My Tech-Stack</Heading>
+                <Text color='whiteAlpha.600' fontSize={{ base: 'md', lg: 'lg' }} mb='10'>
                     I can use these following technologies
                 </Text>
                 <TechStack />
             </Flex>
-            <SimpleGrid columns={3} spacingX='20' spacingY='10'>
+            <SimpleGrid columns={3} spacingX={{ base: '10', lg: '20' }} spacingY='10'>
                 <GridItem colSpan={3}>
-                    <Heading>Languages I speak</Heading>
-                    <Text color='whiteAlpha.600' fontSize='lg'>
+                    <Heading fontSize={{ base: 'xl', lg: '3xl' }}>Languages I speak</Heading>
+                    <Text color='whiteAlpha.600' fontSize={{ base: 'md', lg: 'lg' }}>
                         At least try to
                     </Text>
                 </GridItem>

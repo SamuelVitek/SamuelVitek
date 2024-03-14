@@ -91,10 +91,10 @@ const TechStack: React.FC = () => {
                 {TechStack.map((stack, index) => (
                     <Box w='100%' key={'0' + index}>
                         <Box key={index}>
-                            <Heading fontSize='2xl' fontWeight='500' mb='3' key={stack.label}>
+                            <Heading fontSize={{ base: 'lg', lg: '2xl' }} fontWeight='500' mb='3' key={stack.label}>
                                 {stack.label}
                             </Heading>
-                            <HStack spacing='5' key={stack.label + index}>
+                            <HStack spacing={{ base: '3', lg: '5' }} key={stack.label + index}>
                                 {stack.stack.map((icon, key) => (
                                     <Tooltip
                                         label={stack.stackLabels[key]}
