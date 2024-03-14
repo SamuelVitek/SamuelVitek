@@ -158,7 +158,7 @@ const ContactForm: React.FC = () => {
                     <Flex flexDirection='column'>
                         <Flex alignItems='center'>
                             <Checkbox
-                                me='1'
+                                me='2'
                                 isChecked={isChecked}
                                 isInvalid={isInvalid}
                                 onChange={handleOnClick}
@@ -175,7 +175,7 @@ const ContactForm: React.FC = () => {
                                     as='span'
                                     onClick={() => setIsTooltipOpen(open => !open)}
                                 >
-                                    <Icon as={MdOutlineInfo} fontSize='xl' />
+                                    <Icon as={MdOutlineInfo} fontSize='xl' mt='6px' />
                                 </Box>
                             </Tooltip>
                         </Flex>
