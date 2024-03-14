@@ -20,7 +20,7 @@ const TechStack: React.FC = () => {
 
     const TechStack = [
         {
-            label: "Web Development",
+            label: 'Web Development',
             stack: [
                 <Icon as={FaReact} />,
                 <Icon as={BiLogoTypescript} />,
@@ -43,7 +43,7 @@ const TechStack: React.FC = () => {
             ]
         },
         {
-            label: "Backend Development",
+            label: 'Backend Development',
             stack: [
                 <Icon as={FaJava} />,
                 <Icon as={TbSql} />,
@@ -63,7 +63,7 @@ const TechStack: React.FC = () => {
 
         },
         {
-            label: "Data Science",
+            label: 'Data Science',
             stack: [
                 <Icon as={FaPython} />,
                 <Icon as={SiPandas} />,

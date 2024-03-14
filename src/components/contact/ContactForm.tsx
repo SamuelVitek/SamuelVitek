@@ -11,7 +11,7 @@ import {
     useDisclosure,
     useToast
 } from '@chakra-ui/react';
-import { MdOutlineInfo } from "react-icons/md";
+import { MdOutlineInfo } from 'react-icons/md';
 import ControllerInput from './ControllerInput';
 import { api } from '../../service/api';
 
@@ -117,7 +117,7 @@ const ContactForm: React.FC = () => {
                 reset();
                 onClose();
                 setIsLoading(false);
-                // setIsChecked(false);
+                setIsChecked(false);
                 await sentVerification(emailToUser);
             }
         }
@@ -152,6 +152,7 @@ const ContactForm: React.FC = () => {
                         <Flex>
                             <Checkbox
                                 me='1'
+                                isChecked={isChecked}
                                 isInvalid={isInvalid}
                                 onChange={handleOnClick}
                             >
