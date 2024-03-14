@@ -1,8 +1,8 @@
 import React from 'react';
 import '../../App.css';
-import { FaBriefcase } from "react-icons/fa";
-import { FaLocationDot } from "react-icons/fa6";
-import { RiGraduationCapFill } from "react-icons/ri";
+import { FaBriefcase } from 'react-icons/fa';
+import { FaLocationDot } from 'react-icons/fa6';
+import { RiGraduationCapFill } from 'react-icons/ri';
 import { Flex, Heading, Icon, Image, Tag, Text } from '@chakra-ui/react';
 
 import { Data } from '../../data/Types';

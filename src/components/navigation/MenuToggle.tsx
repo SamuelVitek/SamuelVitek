@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Icon } from '@chakra-ui/react';
-import { MdClose } from "react-icons/md";
-import { CiMenuFries } from "react-icons/ci";
+import { MdClose } from 'react-icons/md';
+import { CiMenuFries } from 'react-icons/ci';
 
 
 interface MenuToggleProps {

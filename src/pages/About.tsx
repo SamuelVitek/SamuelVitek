@@ -7,9 +7,9 @@ import Skills from '../components/about/Skills';
 const About: React.FC = () => {
     return (
         <Flex flexDirection='column' mb='5vh'>
-            <Skills/>
-            <Datacamp/>
-            <StoryTime/>
+            <Skills />
+            <Datacamp />
+            <StoryTime />
         </Flex>
     );
 };

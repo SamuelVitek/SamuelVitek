@@ -20,7 +20,7 @@ const TechStack: React.FC = () => {
 
     const TechStack = [
         {
-            label: "Web Development",
+            label: 'Web Development',
             stack: [
                 <Icon as={FaReact} />,
                 <Icon as={BiLogoTypescript} />,
@@ -43,7 +43,7 @@ const TechStack: React.FC = () => {
             ]
         },
         {
-            label: "Backend Development",
+            label: 'Backend Development',
             stack: [
                 <Icon as={FaJava} />,
                 <Icon as={TbSql} />,
@@ -89,12 +89,12 @@ const TechStack: React.FC = () => {
         <Flex>
             <VStack align='start'>
                 {TechStack.map((stack, index) => (
-                    <>
-                        <Box>
-                            <Heading fontSize='2xl' fontWeight='500' mb='3'>
+                    <Box w='100%' key={'0' + index}>
+                        <Box key={index}>
+                            <Heading fontSize={{ base: 'lg', lg: '2xl' }} fontWeight='500' mb='3' key={stack.label}>
                                 {stack.label}
                             </Heading>
-                            <HStack spacing='5'>
+                            <HStack spacing={{ base: '3', lg: '5' }} key={stack.label + index}>
                                 {stack.stack.map((icon, key) => (
                                     <Tooltip
                                         label={stack.stackLabels[key]}
@@ -116,7 +116,7 @@ const TechStack: React.FC = () => {
                             mb='2'
                             display={(index + 1) === TechStack.length ? 'none' : 'flex'}
                         />
-                    </>
+                    </Box>
                 ))}
             </VStack>
         </Flex>
