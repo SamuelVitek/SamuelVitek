@@ -47,3 +47,22 @@ export type Lang = {
     level: string;
     value: number;
 }
+
+interface CustomError {
+    errorCode: number;
+    message?: string;
+    raw?: {
+        code: string;
+        error: string;
+        message: string;
+        statusCode: number;
+    }
+}
+
+const errorHandle = (e: any) => {
+    const error = e as CustomError;
+
+    return (error.raw?.message || error.message);
+}
+
+export default errorHandle;

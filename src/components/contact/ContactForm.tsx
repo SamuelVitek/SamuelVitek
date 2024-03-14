@@ -14,6 +14,7 @@ import {
 import { MdOutlineInfo } from 'react-icons/md';
 import ControllerInput from './ControllerInput';
 import { api } from '../../service/api';
+import errorHandle from '../../data/Types';
 
 interface IFormInput {
     fullName: string;
@@ -22,13 +23,13 @@ interface IFormInput {
     policies: boolean;
 }
 
-//TODO error management
 //TODO think about partitioning it to smaller components, it's long an ugly
 //TODO find a better state management that this
 const ContactForm: React.FC = () => {
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [isInvalid, setIsInvalid] = useState<boolean>(false);
     const [isChecked, setIsChecked] = useState<boolean>(false);
+    const [isTooltipOpen, setIsTooltipOpen] = useState<boolean>(false);
 
     const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -51,7 +52,8 @@ const ContactForm: React.FC = () => {
 
     const privacyPolicy = 'The data you provide (name, email & message) is used to send a message to my email. ' +
         'You give me the consent to reply to you based on the information you provide in the form above. ' +
-        'The data will be stored only for the purpose of the communication between us.'
+        'The data are not provided to any 3rd party. ' +
+        'The data will be stored solely for the purpose of the communication between us.'
 
     const form = useForm<IFormInput>({
         mode: 'onChange',
@@ -104,8 +106,7 @@ const ContactForm: React.FC = () => {
                     duration: 3000
                 });
             } catch (e) {
-                console.log('ERROR', e)
-                console.error('ERROR', e)
+                console.error('Stack trace: ', errorHandle(e))
 
                 toast({
                     title: 'Error',
@@ -127,8 +128,14 @@ const ContactForm: React.FC = () => {
         try {
             await api.post(`https://api.emailjs.com/api/v1.0/email/send`, emailToUser);
         } catch (e) {
-            console.log('ERROR', e)
-            console.error('ERROR', e)
+            console.error('Stack trace: ', errorHandle(e))
+
+            toast({
+                title: 'Error',
+                description: 'Oh maaan, something went wrong, let me know on contact@samuelvitek.com',
+                status: 'error',
+                duration: 3000
+            });
         }
     }
 
@@ -138,7 +145,7 @@ const ContactForm: React.FC = () => {
     }
 
     return (
-        <Flex w='54%'>
+        <Flex w={{ base: '90%', sm: '70%', md: '54%' }}>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <FormProvider {...form}>
                     {formValues.map(({ attribute, placeholder }) => (
@@ -149,7 +156,7 @@ const ContactForm: React.FC = () => {
                         />
                     ))}
                     <Flex flexDirection='column'>
-                        <Flex>
+                        <Flex alignItems='center'>
                             <Checkbox
                                 me='1'
                                 isChecked={isChecked}
@@ -162,9 +169,13 @@ const ContactForm: React.FC = () => {
                                 label={privacyPolicy}
                                 hasArrow
                                 fontWeight='600'
+                                isOpen={isTooltipOpen}
                             >
-                                <Box as='span'>
-                                    <Icon as={MdOutlineInfo}  fontSize='xl' />
+                                <Box
+                                    as='span'
+                                    onClick={() => setIsTooltipOpen(open => !open)}
+                                >
+                                    <Icon as={MdOutlineInfo} fontSize='xl' />
                                 </Box>
                             </Tooltip>
                         </Flex>

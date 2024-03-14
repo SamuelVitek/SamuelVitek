@@ -63,7 +63,7 @@ const TechStack: React.FC = () => {
 
         },
         {
-            label: 'Data Science',
+            label: "Data Science",
             stack: [
                 <Icon as={FaPython} />,
                 <Icon as={SiPandas} />,
