@@ -51,7 +51,7 @@ const TimelineElement: React.FC<PropsType> = ({ props, isWork }) => {
                         {props.company}
                     </Text>
                     <Text
-                        style={{ margin: '0 0 2.25em 0' }}
+                        style={{ margin: '0 0 2em 0' }}
                     >
                         <Icon as={FaLocationDot} me='1' ms='-2px' />
                         {props.location}
@@ -72,6 +72,7 @@ const TimelineElement: React.FC<PropsType> = ({ props, isWork }) => {
             {props.skills.map((skill, index) => (
                 <Tag
                     me='2'
+                    mt='2'
                     size={{ base: 'sm', sm: 'md' }}
                     key={index + '_' + skill}
                 >

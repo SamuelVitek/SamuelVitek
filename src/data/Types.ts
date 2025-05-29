@@ -1,11 +1,17 @@
 export enum Skills {
     REACT = 'React.js',
     TS = 'Typescript',
+    JS = 'JavaScript',
+    JQuery = 'jQuery',
     NEXT = 'Next.js',
     JAVA = 'Java',
+    PHP = 'PHP',
+    BS = 'Bootstrap 5.3',
     SQL = 'SQL',
     TEACHING = 'Teaching',
     WEBDEV = 'Web Development',
+    WORDPRESS = 'Wordpress',
+    ELEMENTOR = 'Elementor',
     TESTER = 'QA Testing',
 }
 
@@ -21,6 +27,8 @@ export enum Tools {
     JIRA = 'Jira',
     JENKINS = 'Jenkins',
     SCRUM = 'Agile Dev - Scrum',
+    MSSQL = 'MS SQL Management Studio',
+    DOCKER = 'Docker',
 }
 
 export enum Field {

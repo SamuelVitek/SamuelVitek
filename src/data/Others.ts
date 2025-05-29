@@ -40,18 +40,13 @@ export const langs: Lang[] = [
         value: 84
     },
     {
-        lang: 'German',
+        lang: 'Finnish',
         level: 'A2',
         value: 32
     },
     {
-        lang: 'Spanish',
-        level: 'A1',
-        value: 16
-    },
-    {
-        lang: 'Finnish',
-        level: 'A1',
-        value: 16
+        lang: 'German',
+        level: 'A2',
+        value: 32
     },
 ]

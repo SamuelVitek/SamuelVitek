@@ -2,6 +2,35 @@ import { Data, Skills, Tools } from './Types';
 
 export const WorkExperience: Data[] = [
     {
+        title: 'Programmer',
+        company: 'Vitec Raisoft Oy',
+        location: 'Kokkola, Finland',
+        logo: '/img/timeline/raisoft.jpeg',
+        skills: [
+            Skills.JS,
+            Skills.JQuery,
+            Skills.PHP,
+            Skills.BS,
+            Tools.GIT,
+            Tools.JIRA,
+            Tools.MSSQL,
+            Tools.DOCKER
+        ],
+        date: 'March 2024 - present'
+    },
+    {
+        title: 'Technical Consultant - Web Developer',
+        company: 'CloudyPages (self-employed)',
+        location: 'Remote',
+        logo: '/img/timeline/cloudypages.png',
+        skills: [
+            Skills.WEBDEV,
+            Skills.WORDPRESS,
+            Skills.ELEMENTOR
+        ],
+        date: 'January 2021 - present'
+    },
+    {
         title: 'Teacher & Student Assistant',
         company: 'Centria, UAS',
         location: 'Kokkola, Finland',
@@ -9,7 +38,7 @@ export const WorkExperience: Data[] = [
         skills: [
             Skills.TEACHING
         ],
-        date: 'October 2023 - present'
+        date: 'October 2023 - May 2024'
     },
     {
         title: 'Full-Stack Developer',
@@ -24,17 +53,7 @@ export const WorkExperience: Data[] = [
             Tools.POSTMAN,
             Tools.GA
         ],
-        date: 'October 2023 - present'
-    },
-    {
-        title: 'Technical Consultant - Web Developer',
-        company: 'CloudyPages (self-employed)',
-        location: 'Remote',
-        logo: '/img/timeline/cloudypages.png',
-        skills: [
-            Skills.WEBDEV
-        ],
-        date: 'January 2021 - present'
+        date: 'October 2023 - September 2024'
     },
     {
         title: 'Full-Stack Developer',
@@ -58,6 +77,7 @@ export const WorkExperience: Data[] = [
         skills: [
             Skills.JAVA,
             Skills.SQL,
+            Tools.MSSQL,
             Tools.GIT,
             Tools.PBI,
             Tools.JIRA,

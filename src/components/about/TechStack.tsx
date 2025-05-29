@@ -15,6 +15,7 @@ import {
     SiPowerbi,
     SiPycharm
 } from 'react-icons/si';
+import { RiJavascriptFill } from "react-icons/ri";
 
 const TechStack: React.FC = () => {
 
@@ -23,6 +24,7 @@ const TechStack: React.FC = () => {
             label: 'Web Development',
             stack: [
                 <Icon as={FaReact} />,
+                <Icon as={RiJavascriptFill} />,
                 <Icon as={BiLogoTypescript} />,
                 <Icon as={TbBrandNextjs} />,
                 <Icon as={SiPrisma} />,
@@ -33,6 +35,7 @@ const TechStack: React.FC = () => {
             ],
             stackLabels: [
                 'React.js',
+                'JavaScript',
                 'Typescript',
                 'Next.js',
                 'Prisma',
