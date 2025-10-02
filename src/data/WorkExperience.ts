@@ -2,6 +2,17 @@ import { Data, Skills, Tools } from './Types';
 
 export const WorkExperience: Data[] = [
     {
+        title: 'Project Assistant',
+        company: 'Centria UAS',
+        location: 'Kokkola, Finland',
+        logo: '/img/timeline/centria.jpg',
+        skills: [
+            Skills.EDU,
+            Skills.EDU_AI,
+        ],
+        date: 'September 2025 - present'
+    },
+    {
         title: 'Programmer',
         company: 'Vitec Raisoft Oy',
         location: 'Kokkola, Finland',
@@ -16,7 +27,7 @@ export const WorkExperience: Data[] = [
             Tools.MSSQL,
             Tools.DOCKER
         ],
-        date: 'March 2024 - present'
+        date: 'March 2024 - August 2025'
     },
     {
         title: 'Technical Consultant - Web Developer',
@@ -32,7 +43,7 @@ export const WorkExperience: Data[] = [
     },
     {
         title: 'Teacher & Student Assistant',
-        company: 'Centria, UAS',
+        company: 'Centria UAS',
         location: 'Kokkola, Finland',
         logo: '/img/timeline/centria.jpg',
         skills: [

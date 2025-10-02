@@ -13,6 +13,8 @@ export enum Skills {
     WORDPRESS = 'Wordpress',
     ELEMENTOR = 'Elementor',
     TESTER = 'QA Testing',
+    EDU = 'Education Improvement',
+    EDU_AI = 'Implementing AI into education'
 }
 
 export enum Tools {
